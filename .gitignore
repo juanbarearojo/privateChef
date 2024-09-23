@@ -1,0 +1,45 @@
+# Excluir las configuraciones locales de VSCode
+.vscode/
+
+# Archivos de logs
+*.log
+
+# Dependencias del entorno (ejemplo: node_modules en proyectos de Node.js)
+node_modules/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Salidas de compilación
+dist/
+build/
+out/
+
+# Archivos temporales o de respaldo
+*.tmp
+*.swp
+*.bak
+*.old
+*.orig
+
+# Archivos de paquetes comprimidos
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de configuraciones del entorno de desarrollo
+.env
+.env.local
+.env.*.local
+
+# Excluir archivos y directorios generados por npm o yarn (en proyectos de Node.js)
+package-lock.json
+yarn.lock
+
+# Configuraciones específicas de IDEs
+.idea/
+*.iml
+
+# Archivos generados por sistemas de testing
+coverage/
