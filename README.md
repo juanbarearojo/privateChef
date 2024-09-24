@@ -2,20 +2,17 @@
 
 ## Descripción del Problema
 
-Como estudiante con poco tiempo durante la semana, es esencial para mí optimizar el tiempo que dedico a cocinar. A menudo, solo tengo unos pocos días disponibles para preparar todas mis comidas, lo que me lleva a hacer **meal prep** para organizar las comidas del resto de la semana. Sin embargo, es un desafío decidir qué cocinar con los ingredientes que ya tengo en casa, y frecuentemente acabo desperdiciando alimentos que no uso a tiempo.
+Como estudiante con poco tiempo durante la semana, es esencial para mí optimizar el tiempo que dedico a cocinar. Para gestionar mi tiempo de manera eficiente, suelo practicar el **meal prep**. El **meal prep** consiste en preparar todas las comidas de la semana en uno o dos días, organizando y cocinando grandes cantidades de comida que luego se almacenan para su consumo durante los días laborales. Esto me permite evitar cocinar a diario, lo que ahorra tiempo y facilita seguir una dieta planificada.
 
-Además, cuando busco recetas en internet, estas generalmente no proporcionan información sobre los **macronutrientes**, que son claves para planificar una dieta balanceada. Los macronutrientes incluyen:
-- **Proteínas**: necesarias para el crecimiento y la reparación de los tejidos.
-- **Carbohidratos**: la principal fuente de energía para el cuerpo.
-- **Grasas**: esenciales para funciones corporales como la producción de hormonas y la absorción de vitaminas.
-
-Es importante tener esta información para asegurar que cada comida contenga la proporción adecuada de nutrientes. A esto se suma que, al preparar las comidas con antelación, me gustaría poder explorar nuevas culturas gastronómicas para hacer la experiencia más variada y divertida, descubriendo recetas que se ajusten a los ingredientes que ya tengo, pero que provengan de distintas tradiciones culinarias, como la italiana, mexicana o japonesa.
+Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué cocinar con los ingredientes que ya tengo disponibles en casa. A menudo, al final de la semana me doy cuenta de que no he utilizado ciertos ingredientes y terminan por estropearse o sobran, lo que genera desperdicio de alimentos. Encontrar las recetas adecuadas para aprovechar al máximo los ingredientes disponibles puede ser difícil, lo que a veces me lleva a comprar más de lo necesario o no utilizar correctamente lo que ya tengo en casa.
 
 ### Objetivos
 
-- **Facilitar la planificación de comidas semanales**, optimizando el uso de los ingredientes disponibles para evitar el desperdicio de alimentos.
-- **Ofrecer variedad gastronómica**, permitiendo la exploración de recetas de diferentes culturas culinarias para hacer más interesante el proceso de meal prep.
-- **Incluir información de macronutrientes**, asegurando que las comidas sean nutricionalmente balanceadas para satisfacer las necesidades energéticas y de salud.
+- **Facilitar la planificación de comidas semanales**, optimizando el uso de los ingredientes disponibles en casa para evitar el desperdicio de alimentos al final de la semana.
+
+- **Abordar la dificultad de encontrar recetas** que se ajusten a los ingredientes ya disponibles, haciendo más sencillo el proceso de organización del meal prep.
+
+- **Reducir el desperdicio de alimentos**, asegurando que se utilicen la mayor cantidad posible de ingredientes ya comprados, sin necesidad de adquirir más productos innecesarios.
 
 ## Lenguaje
 
