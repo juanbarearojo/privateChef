@@ -4,7 +4,7 @@
 
 32 años, Desarrollador de software.
 
-Cada domingo me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, sobre todo los ingredientes frescos como el pollo y las verduras, y también los productos no perecederos como la pasta y el arroz. Mi objetivo es encontrar recetas que utilicen lo que ya tengo, pero me frustro porque muchas veces las recetas que encuentro requieren ingredientes adicionales o no aprovechan los perecederos que tengo que consumir pronto. A mitad de semana, me doy cuenta de que algunos ingredientes frescos se están echando a perder, y me siento mal por no haber sido más eficiente en la planificación.
+Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, sobre todo los ingredientes frescos como el pollo y las verduras, y también los productos no perecederos como la pasta y el arroz. Mi objetivo es encontrar recetas que utilicen lo que ya tengo, pero me frustro porque muchas veces las recetas que encuentro requieren ingredientes adicionales o no aprovechan los perecederos que tengo que consumir pronto. A mitad de semana, me doy cuenta de que algunos ingredientes frescos se están echando a perder, y me siento mal por no haber sido más eficiente en la planificación.
 
 ## 2. Raúl.
 
