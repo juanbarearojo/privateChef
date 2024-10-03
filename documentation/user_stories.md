@@ -4,9 +4,9 @@
 
 Andrés es un desarrollador que trabaja en una oficina y tiene una agenda ocupada. Para ahorrar tiempo, realiza meal prep cada domingo, planificando y preparando todas sus comidas para la semana. Andrés está comprometido con una dieta balanceada que incluye ingredientes frescos como pollo, pescado, vegetales y frutas, pero también compra productos no perecederos como atún en lata, arroz y pasta. Sin embargo, uno de los mayores desafíos que enfrenta es gestionar adecuadamente la vida útil de sus ingredientes frescos. Al final de la semana, Andrés se ha dado cuenta en varias ocasiones de que algunos de sus ingredientes perecederos, como el pollo o las verduras, se han estropeado, mientras que los no perecederos siguen almacenados sin ser utilizados.
 
-## [HU2] Raúl, gerente de operaciones
+## [HU2] Raúl, estudiante con poco presupuesto
 
-Raúl tiene un trabajo muy exigente y le gusta hacer meal prep los fines de semana para no tener que cocinar todos los días. Sin embargo, uno de los mayores retos que enfrenta es la dificultad de planificar un menú semanal variado y equilibrado. Muchas veces, al final de la semana se da cuenta de que ha repetido platos o que no ha podido seguir la dieta que quería. Raúl necesita ayuda para crear un plan de comidas semanal que se ajuste a sus preferencias y al tiempo que tiene disponible para cocinar
+Raúl es estudiante y tiene un presupuesto limitado, lo que lo lleva a hacer meal prep los fines de semana para organizar sus comidas y no gastar dinero extra comprando fuera. Sin embargo, uno de los mayores retos que enfrenta es planificar un menú semanal que sea variado y económico. A menudo, al final de la semana, se da cuenta de que ha gastado más de lo planeado o que algunos alimentos que compró no los ha utilizado, lo que resulta en un desperdicio de dinero. Raúl necesita ayuda para crear un plan de comidas semanal que sea asequible, eficiente y que se ajuste a sus preferencias y su presupuesto reducido.
 
 ## [HU3] Laura, fotógrafa freelance
 

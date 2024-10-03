@@ -8,9 +8,9 @@ Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que h
 
 ## 2. Raúl.
 
-45 años, Gerente de operaciones.
+22 años, estudiante con poco presupuesto.
 
-Cada domingo intento hacer meal prep para planificar todas mis comidas de la semana. Sin embargo, lo que más me cuesta es decidir qué cocinar. Me siento frente a la computadora para buscar recetas y pensar en un menú equilibrado, pero me abruma la cantidad de opciones y termino dando vueltas sin decidir nada. Muchas veces acabo preparando los mismos platos de siempre, porque no encuentro suficiente inspiración para variar. A mitad de semana, me doy cuenta de que he repetido varias comidas o que no seguí la dieta que tenía en mente, lo que me frustra. 
+Cada domingo intento hacer meal prep para planificar todas mis comidas de la semana, ya que mi presupuesto es limitado y necesito controlar bien mis gastos en alimentos. Lo que más me cuesta es encontrar recetas que se ajusten a mi bolsillo. Me siento frente a la computadora para buscar ideas y pensar en un menú económico, pero me abruma la cantidad de opciones y muchas de ellas requieren ingredientes caros o difíciles de conseguir. Al final, termino preparando los mismos platos una y otra vez, porque no sé cómo variar sin gastar más. A mitad de semana, me doy cuenta de que, aunque he hecho meal prep, he gastado más de lo que quería o que algunos ingredientes se han desperdiciado, lo que me frustra porque estoy intentando ahorrar dinero
 
 ## 3. Laura.
 
