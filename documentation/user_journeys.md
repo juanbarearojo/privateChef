@@ -4,15 +4,14 @@
 
 32 años, Desarrollador de software.
 
-Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, sobre todo los ingredientes frescos como el pollo y las verduras, y también los productos no perecederos como la pasta y el arroz. Mi objetivo es encontrar recetas que utilicen lo que ya tengo, pero me frustro porque muchas veces las recetas que encuentro requieren ingredientes adicionales o no aprovechan los perecederos que tengo que consumir pronto. A mitad de semana, me doy cuenta de que algunos ingredientes frescos se están echando a perder, y me siento mal por no haber sido más eficiente en la planificación.
+Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, prestando especial atención a los ingredientes perecederos como el pollo y las verduras, ya que deben ser utilizados lo antes posible. También reviso los no perecederos como la pasta y el arroz, así como los ingredientes de uso común como agua, sal y pimienta. De estos dos últimos es díficl que se pongan malos debido aque tardan más en hacerlo o siempre tengo acceso a ellos.
 
-## 2. Raúl.
+A menudo me encuentro con dificultades al planificar las comidas, ya que las recetas que encuentro requieren ingredientes adicionales que no tengo o no aprovechan los perecederos que necesitan ser usados pronto. Esto provoca que a mitad de semana algunos de los ingredientes frescos se echen a perder.
 
-22 años, estudiante con poco presupuesto.
+Quiero evitar que los alimentos perecederos se desperdicien a mitad de semana debido a una planificación ineficiente. Esta situación se repite con frecuencia, y termino desperdiciando comida, lo que me hace sentir que no estoy gestionando correctamente lo que ya tengo disponible en casa.
 
-Cada domingo intento hacer meal prep para planificar todas mis comidas de la semana, ya que mi presupuesto es limitado y necesito controlar bien mis gastos en alimentos. Lo que más me cuesta es encontrar recetas que se ajusten a mi bolsillo. Me siento frente a la computadora para buscar ideas y pensar en un menú económico, pero me abruma la cantidad de opciones y muchas de ellas requieren ingredientes caros o difíciles de conseguir. Al final, termino preparando los mismos platos una y otra vez, porque no sé cómo variar sin gastar más. A mitad de semana, me doy cuenta de que, aunque he hecho meal prep, he gastado más de lo que quería o que algunos ingredientes se han desperdiciado, lo que me frustra porque estoy intentando ahorrar dinero
 
-## 3. Laura.
+## 2. Laura.
 
 29 años, Fotógrafa freelance.
 
