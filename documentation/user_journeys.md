@@ -4,7 +4,7 @@
 
 32 años, Desarrollador de software.
 
-Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, prestando especial atención a los ingredientes perecederos como el pollo y las verduras, ya que deben ser utilizados lo antes posible. También reviso los no perecederos como la pasta y el arroz, así como los ingredientes de uso común como agua, sal y pimienta. De estos dos últimos es díficl que se pongan malos debido aque tardan más en hacerlo o siempre tengo acceso a ellos.
+Cada lunes me preparo para hacer meal prep para toda la semana. Lo primero que hago es revisar lo que tengo en casa, prestando especial atención a los ingredientes perecederos como el pollo y las verduras, ya que deben ser utilizados lo antes posible. También reviso los no perecederos como la pasta y el arroz, así como los ingredientes de uso común como agua, sal y pimienta. De estos dos últimos es díficil que se pongan malos debido a que tardan más en hacerlo o siempre tengo acceso a ellos.
 
 A menudo me encuentro con dificultades al planificar las comidas, ya que las recetas que encuentro requieren ingredientes adicionales que no tengo o no aprovechan los perecederos que necesitan ser usados pronto. Esto provoca que a mitad de semana algunos de los ingredientes frescos se echen a perder.
 
