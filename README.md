@@ -21,4 +21,7 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 ## Documentación adicional:
 
 - [Licencia](./LICENSE)
-- [Documentación Técnica](./documentation)
+- [Configuración del proyecto](./documentation/configuracion_repositorio.png)
+- [Historias de usuario](./documentation/user_stories.md)
+- [Milestones](./documentation/milestones.md)
+
