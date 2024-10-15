@@ -2,4 +2,4 @@
 - [x] Ingredientes
 - [x] Receta
 - [x] Inventario
-- [] Semana
+- [x] Semana
