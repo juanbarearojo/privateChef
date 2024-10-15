@@ -16,7 +16,7 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 ## Lenguaje
 
-- **Lenguaje de Programación Principal**: Python
+- **Lenguaje de Programación Principal**: Go
 
 ## Documentación adicional:
 
