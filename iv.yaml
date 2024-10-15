@@ -1,0 +1,6 @@
+lenguaje: Go
+entidad: 
+  - internal/models/ingredientes.go
+  - internal/models/receta.go
+  - internal/models/inventario.go
+  - internal/models/semana.go
