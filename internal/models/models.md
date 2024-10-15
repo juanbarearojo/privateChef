@@ -1,5 +1,5 @@
 # Modelos:
 - [x] Ingredientes
-- [] Recetas
+- [x] Receta
 - [] Inventario
 - [] Semana
