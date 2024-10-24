@@ -4,4 +4,4 @@ entidad:
   - internal/models/receta.go
   - internal/models/inventario.go
   - internal/models/semana.go
-  - internal/models/tipoIngrediente.go
+  - internal/models/tipo-ingrediente.go
