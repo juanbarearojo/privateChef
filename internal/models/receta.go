@@ -1,8 +1,8 @@
 package models
 
 type Receta struct {
-	nombre        string
-	tipoCocina    string
-	ingredientes  []Ingrediente
-	instrucciones string
+	Nombre        string
+	TipoCocina    string
+	Ingredientes  []Ingrediente
+	Instrucciones string
 }
