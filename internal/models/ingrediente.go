@@ -1,7 +1,7 @@
 package models
 
 type Ingrediente struct {
-	Nombre          string
-	TipoIngrediente TipoIngrediente
-	Cantidad        float32
+	nombre          string
+	tipoIngrediente TipoIngrediente
+	cantidad        float32
 }

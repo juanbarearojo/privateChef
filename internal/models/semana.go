@@ -13,5 +13,5 @@ const (
 )
 
 type Semana struct {
-	DiaPreparacion DiaSemana
+	diaPreparacion DiaSemana
 }
