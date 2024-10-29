@@ -3,5 +3,4 @@ entidad:
   - internal/models/ingrediente.go
   - internal/models/receta.go
   - internal/models/inventario.go
-  - internal/models/semana.go
   - internal/models/tipo-ingrediente.go
