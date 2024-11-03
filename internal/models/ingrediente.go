@@ -1,17 +1,32 @@
 package models
 
+import "time"
+
 type Ingrediente struct {
+	id              int
 	nombre          string
 	tipoIngrediente TipoIngrediente
 	cantidad        float32
+	fechaCaducidad  *time.Time
 }
 
-func NewIngrediente(nombre string, tipoIngrediente TipoIngrediente, cantidad float32) Ingrediente {
-	return Ingrediente{
+func NewIngrediente(nombre string, tipoIngrediente TipoIngrediente, cantidad float32, fechaCaducidad *time.Time) Ingrediente {
+	ingrediente := Ingrediente{
 		nombre:          nombre,
 		tipoIngrediente: tipoIngrediente,
 		cantidad:        cantidad,
 	}
+
+	if tipoIngrediente == Perecedero {
+		ingrediente.fechaCaducidad = fechaCaducidad
+	}
+
+	return ingrediente
+}
+
+// Getters
+func (i Ingrediente) GetId() int {
+	return i.id
 }
 
 func (i Ingrediente) GetNombre() string {
@@ -26,14 +41,17 @@ func (i Ingrediente) GetCantidad() float32 {
 	return i.cantidad
 }
 
-func (i *Ingrediente) SetNombre(nombre string) {
-	i.nombre = nombre
+func (i Ingrediente) GetFechaCaducidad() *time.Time {
+	return i.fechaCaducidad
 }
 
-func (i *Ingrediente) SetTipoIngrediente(tipoIngrediente TipoIngrediente) {
-	i.tipoIngrediente = tipoIngrediente
-}
-
+// Setters
 func (i *Ingrediente) SetCantidad(cantidad float32) {
 	i.cantidad = cantidad
+}
+
+func (i *Ingrediente) SetFechaCaducidad(fechaCaducidad *time.Time) {
+	if i.tipoIngrediente == Perecedero {
+		i.fechaCaducidad = fechaCaducidad
+	}
 }
