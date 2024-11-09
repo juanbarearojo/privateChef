@@ -18,6 +18,10 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 - **Lenguaje de Programación Principal**: Go
 
+## Build Tool
+
+- **Compilador**: gc (Go Compiler), ejecutado a través de `go build`
+
 ## Documentación adicional:
 
 - [Licencia](./LICENSE)
