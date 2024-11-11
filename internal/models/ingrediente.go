@@ -3,22 +3,15 @@ package models
 import "time"
 
 type Ingrediente struct {
-	nombre          string
-	tipoIngrediente TipoIngrediente
-	cantidad        float32
-	fechaCaducidad  *time.Time
+	producto       Producto
+	cantidad       float32
+	fechaCaducidad *time.Time
 }
 
-func NewIngrediente(nombre string, tipoIngrediente TipoIngrediente, cantidad float32, fechaCaducidad *time.Time) Ingrediente {
-	ingrediente := Ingrediente{
-		nombre:          nombre,
-		tipoIngrediente: tipoIngrediente,
-		cantidad:        cantidad,
+func NewIngrediente(producto Producto, cantidad float32, fechaCaducidad *time.Time) Ingrediente {
+	return Ingrediente{
+		producto:       producto,
+		cantidad:       cantidad,
+		fechaCaducidad: fechaCaducidad,
 	}
-
-	if tipoIngrediente == Perecedero {
-		ingrediente.fechaCaducidad = fechaCaducidad
-	}
-
-	return ingrediente
 }
