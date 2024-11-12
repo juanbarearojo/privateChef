@@ -1,11 +1,11 @@
 package models
 
 type Inventario struct {
-	ingredientes []Ingrediente
+	ingredientes map[string]Ingrediente
 }
 
-func NewInventario(ingredientes []Ingrediente) Inventario {
+func NewInventario() Inventario {
 	return Inventario{
-		ingredientes: ingredientes,
+		ingredientes: make(map[string]Ingrediente),
 	}
 }
