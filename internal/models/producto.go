@@ -1,13 +1,11 @@
 package models
 
 type Producto struct {
-	nombre          string
-	tipoIngrediente TipoIngrediente
+	nombre string
 }
 
-func NewProducto(nombre string, tipoIngrediente TipoIngrediente) Producto {
+func NewProducto(nombre string) Producto {
 	return Producto{
-		nombre:          nombre,
-		tipoIngrediente: tipoIngrediente,
+		nombre: nombre,
 	}
 }
