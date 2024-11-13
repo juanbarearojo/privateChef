@@ -8,12 +8,12 @@ const (
 
 type Producto struct {
 	nombre string
-	tipo   *TipoIngrediente
+	tipo   TipoIngrediente
 }
 
-func NewProducto(nombre string, tipo *TipoIngrediente) Producto {
+func NewProducto(nombre string) Producto {
 	return Producto{
 		nombre: nombre,
-		tipo:   tipo,
+		tipo:   Perecedero,
 	}
 }
