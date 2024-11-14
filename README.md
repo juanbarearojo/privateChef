@@ -22,6 +22,10 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 - **Compilador**: gc (Go Compiler), ejecutado a través de `go build`
 
+## Gestor de dependencias
+
+-  **Gestor**: Go Modules (go.mod). El proyecto utiliza Go Modules como sistema de gestión de dependencias, permitiendo una administración eficiente y controlada de las versiones de cada módulo, asegurando consistencia en los entornos de desarrollo y producción.
+
 ## Documentación adicional:
 
 - [Licencia](./LICENSE)
