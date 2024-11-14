@@ -34,6 +34,10 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 - **Verificación de sintaxis:** task check
 - **Tarea por defecto:** task default
 
+## orden check
+
+Ejecutar task check
+
 ## Documentación adicional:
 
 - [Licencia](./LICENSE)
