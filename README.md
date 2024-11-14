@@ -26,6 +26,14 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 -  **Gestor**: Go Modules (go.mod). El proyecto utiliza Go Modules como sistema de gestión de dependencias, permitiendo una administración eficiente y controlada de las versiones de cada módulo, asegurando consistencia en los entornos de desarrollo y producción.
 
+## Tareas Definidas en el Taskfile
+
+- **Instalación de dependencias:** task install
+- **Compilación del proyecto:** task build
+- **Ejecución de pruebas:** task test
+- **Verificación de sintaxis:** task check
+- **Tarea por defecto:** task default
+
 ## Documentación adicional:
 
 - [Licencia](./LICENSE)
