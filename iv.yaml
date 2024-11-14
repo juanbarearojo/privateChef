@@ -1,0 +1,6 @@
+lenguaje: Go
+entidad: 
+  - internal/models/inventario.go
+  - internal/models/ingrediente.go
+automatizar:
+  fichero: Taskfile.yml
