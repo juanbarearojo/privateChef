@@ -42,6 +42,7 @@ Ejecutar task check
 
 - [Elección build tool](./documentation/build_tool.md)
 - [Elección gestión dependencias](./documentation/gestor_dependencias.md)
+- [Elección gestor tareas](./documentation/gestor_tareas.md)
 - [Licencia](./LICENSE)
 - [Configuración del proyecto](./documentation/configuracion_repositorio.png)
 - [Historias de usuario](./documentation/user_stories.md)
