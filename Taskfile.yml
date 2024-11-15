@@ -19,7 +19,7 @@ tasks:
   check:
     desc: "Verifica solo la sintaxis del código"
     cmds:
-      - go vet ./internals/models/...
+      - gofmt -e ./internals/models/... > /dev/null
 
   # Tarea por defecto que compila la aplicación
   default:
