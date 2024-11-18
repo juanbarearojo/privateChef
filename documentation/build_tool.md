@@ -1,18 +1,18 @@
-Como se establece en el juanbarearojo#17. Es necesario decidir que build tool que va a ser utilizada. 
+# Decisión de la herramienta de construcción (Build Tool)
+
+Es necesario decidir qué herramienta de construcción se va a utilizar para el proyecto. A continuación, se presentan las opciones consideradas:
+Los criterios de elección para el build tool son los siguientes:
+
+- **Simplicidad de Uso:** La herramienta debe ser fácil de utilizar y permitir al programador buildear el código con una barrera de entrada mínima. Esto con un objetivo muy claro, facilitar y agilizar la carga de trabajo del desarrollador. 
+
+- **Configuración Mínima:** La herramienta no debe requerir instalaciones adicionales, salvo las necesarias para Go, con el fin de mantener el entorno de desarrollo ligero y sin dependencias externas innecesarias.
+
 
 - **Bazel:** Herramienta de construcción eficiente para proyectos complejos y de gran escala, especialmente útil cuando se manejan múltiples lenguajes o dependencias.
 
 - **Goreleaser:** Enfocada en la distribución y lanzamiento de aplicaciones en Go, ideal para la generación automática de binarios y despliegues multiplataforma.
 
 - **Go tooling (Go build):** Herramientas nativas de Go para la compilación que ofrecen una solución simple y efectiva para proyectos sin necesidades avanzadas.
-
-
-
-Los criterios de elección para el build tool son los siguientes:
-
-- **Simplicidad de Uso:** La herramienta debe ser fácil de utilizar y permitir al programador buildear el código con una barrera de entrada mínima. Esto con un objetivo muy claro, facilitar y agilizar la carga de trabajo del desarrollador. 
-
-- **Configuración Mínima:** La herramienta no debe requerir instalaciones adicionales, salvo las necesarias para Go, con el fin de mantener el entorno de desarrollo ligero y sin dependencias externas innecesarias.
 
 
 **Elección: Go tooling.**
