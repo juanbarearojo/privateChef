@@ -1,0 +1,4 @@
+lenguaje: Go
+entidad: 
+  - internal/models/inventario.go
+  - internal/models/ingrediente.go
