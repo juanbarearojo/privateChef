@@ -1,12 +1,13 @@
 # Decisión de la herramienta de construcción (Build Tool)
 
-Es necesario decidir qué herramienta de construcción se va a utilizar para el proyecto. A continuación, se presentan las opciones consideradas:
-Los criterios de elección para el build tool son los siguientes:
+Es necesario decidir qué herramienta de construcción se va a utilizar para el proyecto. Los criterios de elección para el build tool son los siguientes:
 
 - **Simplicidad de Uso:** La herramienta debe ser fácil de utilizar y permitir al programador buildear el código con una barrera de entrada mínima. Esto con un objetivo muy claro, facilitar y agilizar la carga de trabajo del desarrollador. 
 
 - **Configuración Mínima:** La herramienta no debe requerir instalaciones adicionales, salvo las necesarias para Go, con el fin de mantener el entorno de desarrollo ligero y sin dependencias externas innecesarias.
 
+
+ A continuación, se presentan las opciones consideradas:
 
 - **Bazel:** Herramienta de construcción eficiente para proyectos complejos y de gran escala, especialmente útil cuando se manejan múltiples lenguajes o dependencias.
 
