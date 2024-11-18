@@ -32,7 +32,7 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 - **Compilación del proyecto:** task build
 - **Ejecución de pruebas:** task test
 - **Verificación de sintaxis:** task check
-- **Tarea por defecto:** task default
+- **Tarea por defecto:** task
 
 ## orden check
 
