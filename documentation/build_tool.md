@@ -9,15 +9,13 @@ Es necesario decidir qué herramienta de construcción se va a utilizar para el 
 
  A continuación, se presentan las opciones consideradas:
 
-- **Bazel:** Herramienta de construcción eficiente para proyectos complejos y de gran escala, especialmente útil cuando se manejan múltiples lenguajes o dependencias.
+- **Bazel (https://bazel.build/?hl=es-419):** Herramienta de construcción eficiente para proyectos complejos y de gran escala, especialmente útil cuando se manejan múltiples lenguajes o dependencias.
 
-- **Goreleaser:** Enfocada en la distribución y lanzamiento de aplicaciones en Go, ideal para la generación automática de binarios y despliegues multiplataforma.
-
-- **Go tooling (Go build):** Herramientas nativas de Go para la compilación que ofrecen una solución simple y efectiva para proyectos sin necesidades avanzadas.
+- **Go tooling (Go build) (https://pkg.go.dev/cmd/go#hdr-Compile_packages_and_dependencies):** Herramientas nativas de Go para la compilación que ofrecen una solución simple y efectiva para proyectos sin necesidades avanzadas.
 
 
 **Elección: Go tooling.**
 
 Sabiendo que Go tiene una herramienta nativa y considerada estandar en muchos casos se plantea como la opción mas lógica. Cualquier persona que le interese 
-el proyecto con tener Go sera suficiente para buildearlo. **Goreleaser** se descartó porque no se va a hacer un despliegue multiplataforma y por ende se iba a 
-introducir complejidad innecesaria. **Bazel** fue descartadó por un motivo muy parecido
+el proyecto con tener Go sera suficiente para buildearlo. **Bazel** se descartó porque no se va a hacer un despliegue multiplataforma y por ende se iba a 
+introducir complejidad innecesaria. 
