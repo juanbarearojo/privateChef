@@ -7,7 +7,7 @@
 
 **Opciones:**
 
-- **Go Modules:** Es el sistema oficial de gestión de dependencias desde Go 1.11 y, en 2024, se ha consolidado como el estándar recomendado para proyectos en Go. go.mod y go.sum permiten una administración eficiente de dependencias, asegurando versiones consistentes y controladas de cada módulo.
+- **Go Modules (https://go.dev/doc/modules/gomod-ref):** Es el sistema oficial de gestión de dependencias desde Go 1.11 y, en 2024, se ha consolidado como el estándar recomendado para proyectos en Go. go.mod y go.sum permiten una administración eficiente de dependencias, asegurando versiones consistentes y controladas de cada módulo.
 
 
 **Elección: go.mod**
