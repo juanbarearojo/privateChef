@@ -18,8 +18,31 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 - **Lenguaje de Programación Principal**: Go
 
+## Build Tool
+
+- **Compilador**: gc (Go Compiler), ejecutado a través de `go build`
+
+## Gestor de dependencias
+
+-  **Gestor**: Go Modules (go.mod). El proyecto utiliza Go Modules como sistema de gestión de dependencias, permitiendo una administración eficiente y controlada de las versiones de cada módulo, asegurando consistencia en los entornos de desarrollo y producción.
+
+## Tareas Definidas en el Taskfile
+
+- **Instalación de dependencias:** task install
+- **Compilación del proyecto:** task build
+- **Ejecución de pruebas:** task test
+- **Verificación de sintaxis:** task check
+- **Tarea por defecto:** task
+
+## orden check
+
+Ejecutar task check
+
 ## Documentación adicional:
 
+- [Elección build tool](./documentation/build_tool.md)
+- [Elección gestión dependencias](./documentation/gestor_dependencias.md)
+- [Elección gestor tareas](./documentation/gestor_tareas.md)
 - [Licencia](./LICENSE)
 - [Configuración del proyecto](./documentation/configuracion_repositorio.png)
 - [Historias de usuario](./documentation/user_stories.md)

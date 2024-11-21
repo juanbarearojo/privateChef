@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+  install:
+    desc: "Instala las dependencias del proyecto"
+    cmds:
+      - go mod download
+
+  build:
+    desc: "Compila el proyecto sin generar el binario"
+    cmds:
+      - go build ./internals/models
+
+  test:
+    desc: "Ejecuta las pruebas del proyecto"
+    cmds:
+      - go test ./internals/models/...
+
+  check:
+    desc: "Verifica solo la sintaxis del código"
+    cmds:
+      - gofmt -e ./internals/models/... > /dev/null
+
+  # Tarea por defecto que compila la aplicación
+  default:
+    desc: "Compila la aplicación"
+    deps: [build]
+
