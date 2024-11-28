@@ -1,6 +1,5 @@
 # Decisión Test Runner y Biblioteca de Aserciones 
 
----
 
 ## Selección de Biblioteca de Aserciones
 
@@ -50,8 +49,6 @@ Es necesario elegir un test runner adecuado para el proyecto, considerando que e
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
    Un framework de pruebas maduro para Go que permite organizar y ejecutar pruebas de manera estructurada y expresiva, con soporte avanzado para suites de pruebas y perfiles de ejecución. Actúa como test runner y se integra con Gomega para las aserciones.
 
-3. **GoConvey (https://github.com/smartystreets/goconvey):**  
-   Herramienta que incluye un test runner con una interfaz web que ejecuta y muestra resultados de pruebas en tiempo real. Se basa en `go test` y proporciona soporte para pruebas de comportamiento.
 
 ---
 

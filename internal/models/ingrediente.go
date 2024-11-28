@@ -7,7 +7,7 @@ import (
 
 type Ingrediente struct {
 	productos      map[string]Producto
-	cantidad       float32
+	cantidad       uint64
 	fechaCaducidad *string
 }
 
