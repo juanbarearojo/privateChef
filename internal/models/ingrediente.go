@@ -11,10 +11,7 @@ type Ingrediente struct {
 	fechaCaducidad *string
 }
 
-func NewIngrediente(productos map[string]Producto, producto Producto, cantidad float32, fechaCaducidad *string) (*Ingrediente, error) {
-	if cantidad <= 0 {
-		return nil, errors.New("la cantidad debe ser mayor que 0")
-	}
+func NewIngrediente(productos map[string]Producto, producto Producto, cantidad uint64, fechaCaducidad *string) (*Ingrediente, error) {
 
 	if fechaCaducidad != nil {
 		fecha, err := time.Parse("02/01/2006", *fechaCaducidad)

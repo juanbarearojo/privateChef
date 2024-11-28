@@ -1,6 +1,9 @@
 # Decisión Test Runner y Biblioteca de Aserciones 
 
 
+---
+
+
 ## Selección de Biblioteca de Aserciones
 
 **Descripción:**
@@ -27,6 +30,7 @@ Es necesario seleccionar una biblioteca adecuada para escribir y validar pruebas
 4. **GoConvey (https://github.com/smartystreets/goconvey):**  
    Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
 
+
 ---
 
 ## Selección de Test Runner
@@ -47,11 +51,16 @@ Es necesario elegir un test runner adecuado para el proyecto, considerando que e
    Herramienta oficial de Go para ejecutar pruebas unitarias e integración, con soporte para pruebas paralelas y configuración mínima.
 
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
-   Un framework de pruebas maduro para Go que permite organizar y ejecutar pruebas de manera estructurada y expresiva, con soporte avanzado para suites de pruebas y perfiles de ejecución. Actúa como test runner y se integra con Gomega para las aserciones.
+
+   Un framework de pruebas maduro para Go que facilita la escritura de especificaciones expresivas. Ginkgo permite organizar y ejecutar pruebas de manera estructurada y expresiva, con soporte avanzado para suites de pruebas y perfiles de ejecución.
 
 
 ---
 
 ## Elección:
 
-Se eligieron las herramientas nativas de Go, testing y go test, ya que, al existir una opción nativa, esta es la decisión más obvia por su simplicidad, estandarización y sostenibilidad. Garantizan compatibilidad continua con el lenguaje, evitando deuda técnica y complejidad innecesaria. Esto permite un desarrollo más robusto y eficiente a largo plazo.
+- **Biblioteca de Aserciones:**  
+  Se usará `testing` como base por ser nativa y estándar. Gomega y Testify se usarán de manera complementaria para enriquecer las pruebas con una sintaxis más expresiva y funcionalidad adicional cuando sea necesario.
+
+- **Test Runner:**  
+  `go test` será el test runner principal por su simplicidad, soporte oficial y capacidad para ejecución paralela. Ginkgo se considerará como opción para casos donde se necesite una estructura más robusta y descriptiva para las pruebas.
