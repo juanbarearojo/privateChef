@@ -1,5 +1,10 @@
 package models
 
+import (
+	"errors"
+	"time"
+)
+
 type TipoIngrediente string
 
 const (
@@ -8,13 +13,29 @@ const (
 )
 
 type Producto struct {
-	nombre string
-	tipo   TipoIngrediente
+	nombre         string
+	tipo           TipoIngrediente
+	fechaCaducidad *string
 }
 
-func NewProducto(nombre string, tipo TipoIngrediente) Producto {
-	return Producto{
-		nombre: nombre,
-		tipo:   tipo,
+func NewProducto(nombre string, tipo TipoIngrediente, fechaCaducidad *string) (*Producto, error) {
+	if tipo == Perecedero && fechaCaducidad != nil {
+		fecha, err := time.Parse("02/01/2006", *fechaCaducidad)
+		if err != nil {
+			return nil, errors.New("la fecha de caducidad debe tener el formato DD/MM/YYYY")
+		}
+
+		anoActual := time.Now().Year()
+		if fecha.Year() < anoActual {
+			return nil, errors.New("la fecha de caducidad debe ser de este año o superior")
+		}
+	} else if tipo == Perecedero && fechaCaducidad == nil {
+		return nil, errors.New("los productos perecederos deben tener una fecha de caducidad")
 	}
+
+	return &Producto{
+		nombre:         nombre,
+		tipo:           tipo,
+		fechaCaducidad: fechaCaducidad,
+	}, nil
 }
