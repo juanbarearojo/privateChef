@@ -33,3 +33,17 @@ func TestNewProductoPerecederoPastDate(t *testing.T) {
 		t.Errorf("Se esperaba el error '%s', pero se obtuvo '%s'", expectedError, err.Error())
 	}
 }
+
+func TestNewProductoPerecederoNilFechaCaducidad(t *testing.T) {
+	nombre := "Queso"
+	tipo := Perecedero
+	var fechaCaducidad *string = nil
+
+	prod, err := NewProducto(nombre, tipo, fechaCaducidad)
+	if err != nil {
+		t.Fatalf("No se esperaba error cuando fechaCaducidad es nil, pero se obtuvo: %v", err)
+	}
+	if prod.fechaCaducidad != nil {
+		t.Errorf("Se esperaba que fechaCaducidad fuera nil, pero se obtuvo %v", *prod.fechaCaducidad)
+	}
+}
