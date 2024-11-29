@@ -33,6 +33,10 @@ Es necesario seleccionar una biblioteca adecuada para escribir y validar pruebas
 4. **Ghost (https://github.com/rliebz/ghost):**
    Ghost es una biblioteca de aserciones. Ghost proporciona cuatro métodos principales para realizar comprobaciones: Should, ShouldNot, Must y MustNot. Los métodos Should y ShouldNot verifican si una aserción ha tenido éxito, permitiendo que la prueba continúe incluso si la aserción falla, similar a t.Error. Por otro lado, Must y MustNot detienen la ejecución de la prueba si la aserción no pasa, de manera análoga a t.Fatal
 
+5. **GoCheck (https://labix.org/gocheck):**
+   GoCheck es una extensión de la biblioteca testing de Go que proporciona funcionalidades avanzadas para pruebas unitarias y de integración. Aunque su adopción ha disminuido en comparación con bibliotecas como Testify, sigue siendo una opción robusta para quienes necesitan características adicionales sin dejar de utilizar el ecosistema estándar de Go.
+
+
 
 ---
 
@@ -59,6 +63,9 @@ Es necesario elegir un test runner adecuado para el proyecto, considerando que e
 
 5. **GoConvey (https://github.com/smartystreets/goconvey):**  
    GoConvey es una herramienta que combina biblioteca de aserciones, framework de pruebas y test runner.Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
+
+6. **Goblin (https://github.com/franela/goblin?utm_source=chatgpt.com):**
+   Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. S
 
 
 
