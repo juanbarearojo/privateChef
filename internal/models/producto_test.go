@@ -47,3 +47,17 @@ func TestNewProductoPerecederoNilFechaCaducidad(t *testing.T) {
 		t.Errorf("Se esperaba que fechaCaducidad fuera nil, pero se obtuvo %v", *prod.fechaCaducidad)
 	}
 }
+
+func TestNewProductoInvalidTipo(t *testing.T) {
+	nombre := "Desconocido"
+	tipo := TipoIngrediente("desconocido") // Tipo inválido
+	fechaCaducidad := "15/12/2023"
+
+	prod, err := NewProducto(nombre, tipo, &fechaCaducidad)
+	if err != nil {
+		t.Fatalf("No se esperaba error por tipo inválido, pero se obtuvo: %v", err)
+	}
+	if prod.tipo != tipo {
+		t.Errorf("Se esperaba tipo %s, pero se obtuvo %s", tipo, prod.tipo)
+	}
+}
