@@ -1,9 +1,9 @@
 package models
 
 type Inventario struct {
-	ingredientes map[string]Ingrediente
+	ingredientes map[Producto]uint64
 }
 
-func (i *Inventario) GetIngredientes() map[string]Ingrediente {
+func (i *Inventario) GetIngredientes() map[Producto]uint64 {
 	return i.ingredientes
 }

@@ -29,8 +29,6 @@ func NewProducto(nombre string, tipo TipoIngrediente, fechaCaducidad *string) (*
 		if fecha.Year() < anoActual {
 			return nil, errors.New("la fecha de caducidad debe ser de este año o superior")
 		}
-	} else if tipo == Perecedero && fechaCaducidad == nil {
-		return nil, errors.New("los productos perecederos deben tener una fecha de caducidad")
 	}
 
 	return &Producto{
