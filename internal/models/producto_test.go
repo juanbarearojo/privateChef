@@ -18,3 +18,18 @@ func TestNewProductoPerecederoInvalidDateFormat(t *testing.T) {
 		t.Errorf("Se esperaba el error '%s', pero se obtuvo '%s'", expectedError, err.Error())
 	}
 }
+
+func TestNewProductoPerecederoPastDate(t *testing.T) {
+	nombre := "Pan"
+	tipo := Perecedero
+	fechaCaducidad := "15/12/2021" // Año pasado
+
+	_, err := NewProducto(nombre, tipo, &fechaCaducidad)
+	if err == nil {
+		t.Fatalf("Se esperaba error por fecha de caducidad en el pasado, pero se obtuvo nil")
+	}
+	expectedError := "la fecha de caducidad debe ser de este año o superior"
+	if err.Error() != expectedError {
+		t.Errorf("Se esperaba el error '%s', pero se obtuvo '%s'", expectedError, err.Error())
+	}
+}
