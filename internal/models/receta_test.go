@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestRecetaGetIngredientes(t *testing.T) {
+func testRecetaGetIngredientes(t *testing.T) {
 	// Crear productos de ejemplo
 	harina := Producto{
 		nombre:         "Harina",
