@@ -1,64 +1,59 @@
-func TestAplicarAsignacionNoNull(t *testing.T) {
-	// Crear productos
+package models
+
+import (
+	"testing"
+)
+
+func TestRealizarAsignacionListaNoVacia(t *testing.T) {
+	harina, err := NewProducto("Harina", NoPerecedero, nil)
+	if err != nil {
+		t.Fatalf("Error al crear Harina: %v", err)
+	}
+	azúcar, err := NewProducto("Azúcar", NoPerecedero, nil)
+	if err != nil {
+		t.Fatalf("Error al crear Azúcar: %v", err)
+	}
+
 	fechaCaducidad := "15/12/2024"
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
+	levadura, err := NewProducto("Levadura", Perecedero, &fechaCaducidad)
+	if err != nil {
+		t.Fatalf("Error al crear Levadura: %v", err)
 	}
 
-	azucar := Producto{
-		nombre:         "Azúcar",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
+	huevos, err := NewProducto("Huevos", Perecedero, &fechaCaducidad)
+	if err != nil {
+		t.Fatalf("Error al crear Huevos: %v", err)
 	}
 
-	levadura := Producto{
-		nombre:         "Levadura",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	huevos := Producto{
-		nombre:         "Huevos",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	// Crear inventario inicial
 	inventario := Inventario{
 		ingredientes: map[Producto]uint64{
-			harina:   5,
-			azucar:   3,
-			levadura: 2,
-			huevos:   6,
+			*harina:   2,
+			*azúcar:   1,
+			*levadura: 1,
 		},
 	}
 
-	// Crear lista de recetas
 	recetas := []Receta{
 		{
 			titulo: "Pan Casero",
 			ingredientes: map[Producto]uint64{
-				harina:   2,
-				levadura: 1,
+				*harina:   2,
+				*levadura: 1,
 			},
 		},
 		{
 			titulo: "Bizcocho",
 			ingredientes: map[Producto]uint64{
-				harina: 3,
-				azucar: 2,
-				huevos: 2,
+				*harina: 3,
+				*azúcar: 2,
+				*huevos: 2,
 			},
 		},
 	}
 
-	// Llamar a la función aplicarAsignacion
-	nuevoInventario := inventario.aplicarAsignacion(recetas)
+	recetasAsignables := realizarAsignacion(recetas, inventario)
 
-	// Verificar que el nuevo inventario no es nulo
-	if nuevoInventario == nil {
-		t.Errorf("aplicarAsignacion devolvió un inventario nulo")
+	if len(recetasAsignables) == 0 {
+		t.Errorf("realizarAsignacion devolvió una lista vacía de recetas")
 	}
 }
