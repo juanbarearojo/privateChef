@@ -17,3 +17,14 @@ func (i *Inventario) GetDesperdicio() uint64 {
 	}
 	return desperdicio
 }
+
+func (i *Inventario) Clone() *Inventario {
+	ingredientesClonados := make(map[Producto]uint64)
+	for producto, cantidad := range i.ingredientes {
+		ingredientesClonados[producto] = cantidad
+	}
+
+	return &Inventario{
+		ingredientes: ingredientesClonados,
+	}
+}
