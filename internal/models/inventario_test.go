@@ -102,6 +102,45 @@ func TestInventarioCloneNoVacio(t *testing.T) {
 	}
 }
 
+func TestInventarioCloneIgualAlOriginal(t *testing.T) {
+	// Crear productos de ejemplo
+	fechaCaducidad := "15/12/2024"
+	manzana := Producto{
+		nombre:         "Manzana",
+		tipo:           Perecedero,
+		fechaCaducidad: &fechaCaducidad,
+	}
+
+	harina := Producto{
+		nombre:         "Harina",
+		tipo:           NoPerecedero,
+		fechaCaducidad: nil,
+	}
+
+	leche := Producto{
+		nombre:         "Leche",
+		tipo:           Perecedero,
+		fechaCaducidad: &fechaCaducidad,
+	}
+
+	// Crear el inventario original
+	inventarioOriginal := &Inventario{
+		ingredientes: map[Producto]uint64{
+			manzana: 5,
+			harina:  10,
+			leche:   3,
+		},
+	}
+
+	// Clonar el inventario
+	inventarioClonado := inventarioOriginal.Clone()
+
+	// Verificar que el inventario clonado es igual al original
+	if !reflect.DeepEqual(inventarioOriginal.ingredientes, inventarioClonado.ingredientes) {
+		t.Errorf("El inventario clonado no es igual al original.\nOriginal: %v\nClonado: %v", inventarioOriginal.ingredientes, inventarioClonado.ingredientes)
+	}
+}
+
 func TestAplicarAsignacionNoNull(t *testing.T) {
 	// Crear productos
 	fechaCaducidad := "15/12/2024"
