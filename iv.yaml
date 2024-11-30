@@ -6,3 +6,4 @@ automatizar:
   fichero: Taskfile.yml
   orden: task
 
+test: internal/models/asignacion_test.go
