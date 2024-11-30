@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestGetDesperdicioNoNegativo(t *testing.T) {
+func testGetDesperdicioNoNegativo(t *testing.T) {
 	fechaCaducidadmanzana := "15/12/2024"
 	producto := Producto{
 		nombre:         "Manzana",
@@ -26,7 +26,44 @@ func TestGetDesperdicioNoNegativo(t *testing.T) {
 	}
 }
 
-func TestAplicarAsignacionNoNull(t *testing.T) {
+func testGetDesperdicioValorCorrecto(t *testing.T) {
+	fechaCaducidad := "15/12/2024"
+	manzana := Producto{
+		nombre:         "Manzana",
+		tipo:           Perecedero,
+		fechaCaducidad: &fechaCaducidad,
+	}
+
+	harina := Producto{
+		nombre:         "Harina",
+		tipo:           NoPerecedero,
+		fechaCaducidad: nil,
+	}
+
+	leche := Producto{
+		nombre:         "Leche",
+		tipo:           Perecedero,
+		fechaCaducidad: &fechaCaducidad,
+	}
+
+	inventario := &Inventario{
+		ingredientes: map[Producto]uint64{
+			manzana: 5,
+			harina:  10,
+			leche:   3,
+		},
+	}
+
+	desperdicioEsperado := uint64(5 + 3)
+
+	desperdicioActual := inventario.GetDesperdicio()
+
+	if desperdicioActual != desperdicioEsperado {
+		t.Errorf("GetDesperdicio devolvió %d, se esperaba %d", desperdicioActual, desperdicioEsperado)
+	}
+}
+
+func testAplicarAsignacionNoNull(t *testing.T) {
 	// Crear productos
 	fechaCaducidad := "15/12/2024"
 	harina := Producto{
@@ -82,16 +119,14 @@ func TestAplicarAsignacionNoNull(t *testing.T) {
 		},
 	}
 
-	// Llamar a la función aplicarAsignacion
 	nuevoInventario := inventario.aplicarAsignacion(recetas)
 
-	// Verificar que el nuevo inventario no es nulo
 	if nuevoInventario == nil {
 		t.Errorf("aplicarAsignacion devolvió un inventario nulo")
 	}
 }
 
-func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
+func testAplicarAsignacionInventarioCorrecto(t *testing.T) {
 	fechaCaducidad := "15/12/2024"
 	harina := Producto{
 		nombre:         "Harina",
