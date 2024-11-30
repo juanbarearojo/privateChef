@@ -267,7 +267,7 @@ func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
 	}
 
 	nuevoInventario := inventarioInicial.Clone()
-	nuevoInventario = aplicarAsignacion(recetas, nuevoInventario)
+	nuevoInventario = nuevoInventario.aplicarAsignacion(recetas)
 
 	if !reflect.DeepEqual(nuevoInventario.ingredientes, inventarioEsperado.ingredientes) {
 		t.Errorf("El inventario resultante no coincide con el esperado.\nEsperado: %v\nObtenido: %v", inventarioEsperado.ingredientes, nuevoInventario.ingredientes)

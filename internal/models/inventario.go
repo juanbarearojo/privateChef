@@ -28,3 +28,19 @@ func (i *Inventario) Clone() *Inventario {
 		ingredientes: ingredientesClonados,
 	}
 }
+
+func (i *Inventario) aplicarAsignacion(recetas []Receta) *Inventario {
+	// Clonar el inventario para no modificar el original
+	nuevoInventario := i.Clone()
+
+	// Recorrer cada receta en la lista de recetas
+	for _, receta := range recetas {
+		// Obtener los ingredientes necesarios para la receta usando GetIngredientes()
+		for producto, cantidadNecesaria := range receta.GetIngredientes() {
+			// Restar la cantidad necesaria del inventario sin verificar si el producto existe
+			nuevoInventario.ingredientes[producto] -= cantidadNecesaria
+		}
+	}
+
+	return nuevoInventario
+}

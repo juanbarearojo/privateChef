@@ -181,7 +181,7 @@ func testAsignacionComparativa(t *testing.T) {
 
 	// Aplicar asignación humana al inventario
 	inventarioHumano := inventarioInicial.Clone()
-	inventarioHumano = aplicarAsignacion(asignacionHumana, inventarioHumano)
+	inventarioHumano = inventarioHumano.aplicarAsignacion(asignacionHumana)
 
 	// Calcular desperdicio después de la asignación humana
 	desperdicioHumano := inventarioHumano.GetDesperdicio()
@@ -191,7 +191,7 @@ func testAsignacionComparativa(t *testing.T) {
 
 	// Aplicar asignación óptima al inventario
 	inventarioOptimo := inventarioInicial.Clone()
-	inventarioOptimo = aplicarAsignacion(asignacionOptima, inventarioOptimo)
+	inventarioOptimo = inventarioOptimo.aplicarAsignacion(asignacionOptima)
 
 	// Calcular desperdicio después de la asignación óptima
 	desperdicioOptimo := inventarioOptimo.GetDesperdicio()
