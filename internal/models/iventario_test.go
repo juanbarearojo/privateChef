@@ -87,7 +87,7 @@ func TestAplicarAsignacionNoNull(t *testing.T) {
 	}
 
 	// Llamar a la función aplicarAsignacion
-	nuevoInventario := aplicarAsignacion(recetas, inventario)
+	nuevoInventario := inventario.aplicarAsignacion(recetas)
 
 	// Verificar que el nuevo inventario no es nulo
 	if nuevoInventario == nil {
