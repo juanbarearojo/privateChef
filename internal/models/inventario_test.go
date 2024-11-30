@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func testGetDesperdicioNoNegativo(t *testing.T) {
+func TestGetDesperdicioNoNegativo(t *testing.T) {
 	fechaCaducidadmanzana := "15/12/2024"
 	producto := Producto{
 		nombre:         "Manzana",
@@ -26,7 +26,7 @@ func testGetDesperdicioNoNegativo(t *testing.T) {
 	}
 }
 
-func testGetDesperdicioValorCorrecto(t *testing.T) {
+func TestGetDesperdicioValorCorrecto(t *testing.T) {
 	fechaCaducidad := "15/12/2024"
 	manzana := Producto{
 		nombre:         "Manzana",
@@ -63,7 +63,7 @@ func testGetDesperdicioValorCorrecto(t *testing.T) {
 	}
 }
 
-func testAplicarAsignacionNoNull(t *testing.T) {
+func TestAplicarAsignacionNoNull(t *testing.T) {
 	// Crear productos
 	fechaCaducidad := "15/12/2024"
 	harina := Producto{
@@ -126,7 +126,7 @@ func testAplicarAsignacionNoNull(t *testing.T) {
 	}
 }
 
-func testAplicarAsignacionInventarioCorrecto(t *testing.T) {
+func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
 	fechaCaducidad := "15/12/2024"
 	harina := Producto{
 		nombre:         "Harina",
