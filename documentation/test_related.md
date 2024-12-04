@@ -64,7 +64,7 @@ Es necesario elegir un test runner adecuado para el proyecto, considerando que e
 5. **GoConvey (https://github.com/smartystreets/goconvey):**  
    GoConvey es una herramienta que combina biblioteca de aserciones, framework de pruebas y test runner.Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
 
-6. **Goblin (https://github.com/franela/goblin?utm_source=chatgpt.com):**
+6. **Goblin (https://github.com/franela/goblin):**
    Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. S
 
 
