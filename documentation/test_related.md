@@ -15,10 +15,6 @@
 
 ## Selección de Biblioteca de Aserciones
 
-**Descripción:**
-
-Es necesario seleccionar una biblioteca adecuada para escribir y validar pruebas en el proyecto. La decisión debe basarse en las necesidades del equipo, priorizando simplicidad, funcionalidad y estándares de la comunidad para garantizar un flujo de trabajo eficiente y mantenible.
-
 **Opciones de Bibliotecas de Aserciones:**
 
 1. **Testing (https://pkg.go.dev/testing):**  
@@ -42,11 +38,6 @@ Es necesario seleccionar una biblioteca adecuada para escribir y validar pruebas
 
 ## Selección de Test Runner
 
-**Descripción:**
-
-Es necesario elegir un test runner adecuado para el proyecto, considerando que está desarrollado en Go. El objetivo es contar con una herramienta eficiente que permita ejecutar pruebas unitarias y de integración de manera automatizada, optimizando el flujo de trabajo del equipo.
-
-
 **Opciones de Test Runner:**
 
 1. **`go test` (https://pkg.go.dev/cmd/go#hdr-Test_packages):**  
@@ -65,7 +56,7 @@ Es necesario elegir un test runner adecuado para el proyecto, considerando que e
    GoConvey es una herramienta que combina biblioteca de aserciones, framework de pruebas y test runner.Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
 
 6. **Goblin (https://github.com/franela/goblin):**
-   Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. S
+   Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. 
 
 
 
