@@ -46,10 +46,7 @@
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
    Un framework de pruebas maduro para Go que incluye un **test runner** facilita la escritura de especificaciones expresivas. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. Este ejecutable ofrece funcionalidades avanzadas para generar, ejecutar, filtrar y perfilar suites de pruebas escritas con Ginkgo.
 
-3. **GoConvey (https://github.com/smartystreets/goconvey):**  
-   GoConvey es una herramienta que combina biblioteca de aserciones, framework de pruebas y test runner.Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
-
-4. **Goblin (https://github.com/franela/goblin):**
+3. **Goblin (https://github.com/franela/goblin):**
    Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. 
 
 
