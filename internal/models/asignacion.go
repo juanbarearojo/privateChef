@@ -44,22 +44,5 @@ func realizarAsignacion(recetas []Receta, inventario Inventario) []Receta {
 		}
 	}
 
-	// Si no se encontró una mejor asignación, retornar recetas que se pueden preparar individualmente
-	if len(mejorAsignacion) == 0 {
-		for _, receta := range recetas {
-			valida := true
-			for producto, cantidadNecesaria := range receta.GetIngredientes() {
-				cantidadDisponible, existe := inventario.ingredientes[producto]
-				if !existe || cantidadDisponible < cantidadNecesaria {
-					valida = false
-					break
-				}
-			}
-			if valida {
-				mejorAsignacion = append(mejorAsignacion, receta)
-			}
-		}
-	}
-
 	return mejorAsignacion
 }
