@@ -3,9 +3,9 @@
 
 **Criterios de elección comunes para ambas herramientas:**
 
-- Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
-- La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo.Debe estar mantenida y actualizacion reciente. 
-- Debe de tener una versión estable para poder ser utilizada.
+- En este caso como se establece en los Go Proverbs (https://go-proverbs.github.io/), que se han considerado como unas buenas prácticas para el lenguaje, "A little copying is better than a little dependency". Por lo general el lenguaje de Go incentiva a la no dependencia de librerías externas. Por esto se dará prioridad a herramientas que vengan instaladas por defecto con Go.
+- En caso de tener una puntuación en https://snyk.io/advisor/golang será utilizada como un reflejo de la salud del proyecto. Esto ya que en teoría, snyk advisor da la puntuación para una herramienta esta basada en 4 conceptos (security, popularity, maintenance, community).
+- Debe de tener una versión estable lanzada desde hace más de un año para poder ser utilizada. Esto con el objetivo de aunque haya herramientas prometodoras se busca no caer en el FOMO (Fear Of Missing Out). Que herramienta sea la más nueva no significa que sea la mejor. 
 
 ---
 
@@ -49,7 +49,7 @@
 
 **Selección de Biblioteca de Aserciones:**
 
-Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. La gran mayoría de bibliotecas de aserciones para Go sirven como un complemento para la base del paquete estandar. Bajo esta premisa se han puesto el resto de bibliotecas de aserciones para mostrar otras posibles opciones en el ecosistema de Go. 
+Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. La gran mayoría de bibliotecas de aserciones para Go sirven como un complemento para la base del paquete estandar. Es verdad que hay bibliotecas que toman otro enfoque a la hora de hacer aserciones Bajo esta premisa se han puesto el resto de bibliotecas de aserciones para mostrar otras posibles opciones en el ecosistema de Go. 
 
 **Selección de Test Runner:**
 
