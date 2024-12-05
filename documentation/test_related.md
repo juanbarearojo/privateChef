@@ -11,7 +11,6 @@
 ---
 
 
-
 ## Selección de Biblioteca de Aserciones
 
 **Opciones de Bibliotecas de Aserciones:**
@@ -33,7 +32,6 @@
    GoCheck es una extensión de la biblioteca testing de Go que proporciona funcionalidades avanzadas para pruebas unitarias y de integración. Aunque su adopción ha disminuido en comparación con bibliotecas como Testify, sigue siendo una opción robusta para quienes necesitan características adicionales sin dejar de utilizar el ecosistema estándar de Go. No busca sustuir sino complementar. 
 
 
-
 ---
 
 ## Selección de Test Runner
@@ -44,12 +42,7 @@
    Herramienta oficial de Go para ejecutar pruebas unitarias e integración, con soporte para pruebas paralelas y configuración mínima.
 
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
-   Un framework de pruebas maduro para Go que incluye un **test runner** facilita la escritura de especificaciones expresivas. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. Este ejecutable ofrece funcionalidades avanzadas para generar, ejecutar, filtrar y perfilar suites de pruebas escritas con Ginkgo.
-
-3. **Goblin (https://github.com/franela/goblin):**
-   Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. 
-
-
+   Un framework de pruebas maduro para Go que incluye un **test runner** facilita la escritura de especificaciones expresivas. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. Este ejecutable ofrece funcionalidades avanzadas para generar, ejecutar, filtrar y perfilar suites de pruebas escritas con Ginkgo. Basado en BDD.
 
 ---
 
@@ -61,4 +54,4 @@ Se selecciona `testing` como biblioteca de aserciones debido a que viene instala
 
 **Selección de Test Runner:**
 
-El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Su simplicidad, soporte oficial y capacidad para ejecución paralela lo convierten en la mejor opción para el proyecto. Aunque herramientas como Ginkgo son viables para proyectos que requieren estructuras más avanzadas, se elige `go test` por ser la solución oficial y por preferencias del programador.
+El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Su simplicidad y soporte oficial lo hacen la mejor opción para el proyecto. Aunque herramientas como Ginkgo son viables para proyectos que requieren estructuras más avanzadas pero está basado en BDD.
