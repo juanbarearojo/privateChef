@@ -3,11 +3,9 @@
 
 **Criterios de elección comunes para ambas herramientas:**
 
-- Compatibilidad Nativa: Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
-- El test runner debe tener soporte activo para garantizar actualizaciones y reducir la deuda técnica del proyecto.
-- Haber tenido en el último año una actualización para asegurar la salud del proyecto.
-- Tener suficente madurez el proyecto para asegurar una versión estable del mismo
-- Salud del Proyecto: Preferir herramientas con una salud superior a 50 en Snyk Advisor para minimizar riesgos de mantenimiento o problemas de seguridad.
+- Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
+- La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo. Debe estar mantenida. 
+- Debe de tener una versión estable para poder ser utlizada.
 
 ---
 
