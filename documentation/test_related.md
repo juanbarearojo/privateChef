@@ -4,8 +4,8 @@
 **Criterios de elección comunes para ambas herramientas:**
 
 - Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
-- La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo. Debe estar mantenida. 
-- Debe de tener una versión estable para poder ser utlizada.
+- La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo.Debe estar mantenida y actualizacion reciente. 
+- Debe de tener una versión estable para poder ser utilizada.
 - No se priorizará aquellas herramientas que no favorezcan la metodología TDD.
 
 ---
