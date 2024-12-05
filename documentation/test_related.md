@@ -6,7 +6,6 @@
 - Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
 - La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo.Debe estar mantenida y actualizacion reciente. 
 - Debe de tener una versión estable para poder ser utilizada.
-- No se priorizará aquellas herramientas que no favorezcan la metodología TDD.
 
 ---
 
@@ -17,7 +16,7 @@
 
 1. **Testing (https://pkg.go.dev/testing):**  
    Biblioteca nativa de Go para escribir y ejecutar pruebas. No hay métodos de aserción especializados sino que son usadas construcciones simples del 
-   lenguaje.
+   lenguaje. Es importante destacar que Go maneja errores de manera explícita ya que las funciones devuleven tanto un objeto como un error. 
 
 2. **Gomega (https://onsi.github.io/gomega/):**  
    Una biblioteca de aserciones expresiva diseñada para trabajar junto con Ginkgo están basadas en el BDD, pero que también puede usarse con el paquete estándar. Gomega proporciona una amplia variedad de matchers y una sintaxis expresiva, mejorando la claridad y el mantenimiento de las pruebas.
@@ -50,8 +49,8 @@
 
 **Selección de Biblioteca de Aserciones:**
 
-Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. La gran mayoría de bibliotecas de aserciones para Go sirven como un complemento para la base del paquete estandar. Bajo esta premisa se han puesto el resto de bibliotecas de aserciones para mostrar otras posibles opciones en el ecosistema de Go.
+Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. La gran mayoría de bibliotecas de aserciones para Go sirven como un complemento para la base del paquete estandar. Bajo esta premisa se han puesto el resto de bibliotecas de aserciones para mostrar otras posibles opciones en el ecosistema de Go. 
 
 **Selección de Test Runner:**
 
-El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Su simplicidad y soporte oficial lo hacen la mejor opción para el proyecto. Aunque herramientas como Ginkgo son viables para proyectos que requieren estructuras más avanzadas pero está basado en BDD.
+El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. El hecho de que tenga soporte oficial lo hacen la mejor opción para el proyecto. Aunque herramientas como Ginkgo son viables para proyectos que se busque usar BDD. Al descartar Gomega que esta estrechamente relacionada con Ginkgo es otro motivo. Esto debido a estar pensadas para usar en conjunto. Hay muchos frameworks pero la gran mayoría usan go test por debajo lo que refuerza la elección. 
