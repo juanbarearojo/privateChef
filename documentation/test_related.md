@@ -46,16 +46,10 @@
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
    Un framework de pruebas maduro para Go que incluye un **test runner** facilita la escritura de especificaciones expresivas. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. Este ejecutable ofrece funcionalidades avanzadas para generar, ejecutar, filtrar y perfilar suites de pruebas escritas con Ginkgo.
 
-3. **gotestsum (https://github.com/gotestyourself/gotestsum):**  
-   Gotestsum es una herramienta para ejecutar pruebas en Go que utiliza go test -json para proporcionar una salida formateada y un resumen de los resultados de las pruebas. Está diseñada tanto para el desarrollo local como para su integración en sistemas de integración continua
-
-4. **gotestdox (https://github.com/bitfield/gotestdox):**
-   Gotestdox es una herramienta de línea de comandos que ejecuta pruebas en Go y formatea los resultados en una documentación legible. Convierte los nombres de las pruebas escritas en notación CamelCase en oraciones descriptivas, facilitando la comprensión del comportamiento que se está probando
-
-5. **GoConvey (https://github.com/smartystreets/goconvey):**  
+3. **GoConvey (https://github.com/smartystreets/goconvey):**  
    GoConvey es una herramienta que combina biblioteca de aserciones, framework de pruebas y test runner.Ofrece tanto una biblioteca de aserciones como un servidor web para visualizar resultados de pruebas en tiempo real. Se integra con `go test` y permite escribir pruebas de comportamiento. Es útil para proyectos que requieren una interfaz visual para revisar resultados.
 
-6. **Goblin (https://github.com/franela/goblin):**
+4. **Goblin (https://github.com/franela/goblin):**
    Goblin es principalmente un test runner con una funcionalidad básica de biblioteca de aserciones integrada. No es exclusivamente una biblioteca de aserciones como Testify o Gomega, ni un framework completamente extensible como Ginkgo. 
 
 
@@ -70,4 +64,4 @@ Se selecciona `testing` como biblioteca de aserciones debido a que viene instala
 
 **Selección de Test Runner:**
 
-El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Su simplicidad, soporte oficial y capacidad para ejecución paralela lo convierten en la mejor opción para el proyecto. Aunque herramientas como Ginkgo y Gotestdox son viables para proyectos que requieren estructuras más avanzadas, se elige `go test` por ser la solución oficial y por preferencias del programador, lo que asegura compatibilidad nativa y una experiencia más eficiente.
+El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Su simplicidad, soporte oficial y capacidad para ejecución paralela lo convierten en la mejor opción para el proyecto. Aunque herramientas como Ginkgo son viables para proyectos que requieren estructuras más avanzadas, se elige `go test` por ser la solución oficial y por preferencias del programador.
