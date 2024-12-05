@@ -6,6 +6,7 @@
 - Dar prioridad a herramientas que vengan instaladas por defecto con Go para evitar dependencias externas y configuraciones adicionales.
 - La herramienta elegida debe de tener una buena salud con el objetivo de reducir la deuda tecnica a largo plazo. Debe estar mantenida. 
 - Debe de tener una versión estable para poder ser utlizada.
+- No se priorizará aquellas herramientas que no favorezcan la metodología TDD.
 
 ---
 
@@ -59,7 +60,7 @@
 
 **Selección de Biblioteca de Aserciones:**
 
-Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. Se descarta la opción de `Ghost` debido a su baja salud en Snyk Advisor, lo que plantea dudas sobre su mantenimiento y estabilidad futura.
+Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. La gran mayoría de bibliotecas de aserciones para Go sirven como un complemento para la base del paquete estandar. Bajo esta premisa se han puesto el resto de bibliotecas de aserciones para mostrar otras posibles opciones en el ecosistema de Go.
 
 **Selección de Test Runner:**
 
