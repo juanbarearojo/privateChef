@@ -6,56 +6,19 @@ import (
 )
 
 func TestGetDesperdicioNoNegativo(t *testing.T) {
-	fechaCaducidadmanzana := "15/12/2024"
-	producto := Producto{
-		nombre:         "Manzana",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidadmanzana,
-	}
-
-	inventario := &Inventario{
-		ingredientes: map[Producto]uint64{
-			producto: 10, // Cantidad positiva
-		},
-	}
+	_, _, _, _, inventario, _ := setupTestEnvironment()
 
 	desperdicio := inventario.GetDesperdicio()
-
 	if desperdicio < 0 {
 		t.Errorf("GetDesperdicio devolvió un valor negativo: %d", desperdicio)
 	}
 }
 
 func TestGetDesperdicioValorCorrecto(t *testing.T) {
-	fechaCaducidad := "15/12/2024"
-	manzana := Producto{
-		nombre:         "Manzana",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
+	_, _, _, _, inventario, _ := setupTestEnvironment()
 
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
-
-	leche := Producto{
-		nombre:         "Leche",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	inventario := &Inventario{
-		ingredientes: map[Producto]uint64{
-			manzana: 5,
-			harina:  10,
-			leche:   3,
-		},
-	}
-
-	desperdicioEsperado := uint64(5 + 3)
-
+	// Perecederos: Levadura(2) + Huevos(6) = 8
+	desperdicioEsperado := uint64(8)
 	desperdicioActual := inventario.GetDesperdicio()
 
 	if desperdicioActual != desperdicioEsperado {
@@ -64,140 +27,31 @@ func TestGetDesperdicioValorCorrecto(t *testing.T) {
 }
 
 func TestInventarioCloneNoVacio(t *testing.T) {
-	// Crear productos de ejemplo
-	fechaCaducidad := "15/12/2024"
-	manzana := Producto{
-		nombre:         "Manzana",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
+	_, _, _, _, inventario, _ := setupTestEnvironment()
 
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
+	inventarioClonado := inventario.Clone()
 
-	leche := Producto{
-		nombre:         "Leche",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	// Crear el inventario original
-	inventarioOriginal := &Inventario{
-		ingredientes: map[Producto]uint64{
-			manzana: 5,
-			harina:  10,
-			leche:   3,
-		},
-	}
-
-	// Clonar el inventario
-	inventarioClonado := inventarioOriginal.Clone()
-
-	// Verificar que el inventario clonado no está vacío
 	if len(inventarioClonado.ingredientes) == 0 {
 		t.Errorf("El inventario clonado está vacío")
 	}
 }
 
 func TestInventarioCloneIgualAlOriginal(t *testing.T) {
-	// Crear productos de ejemplo
-	fechaCaducidad := "15/12/2024"
-	manzana := Producto{
-		nombre:         "Manzana",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
+	_, _, _, _, inventario, _ := setupTestEnvironment()
 
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
+	inventarioClonado := inventario.Clone()
 
-	leche := Producto{
-		nombre:         "Leche",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	// Crear el inventario original
-	inventarioOriginal := &Inventario{
-		ingredientes: map[Producto]uint64{
-			manzana: 5,
-			harina:  10,
-			leche:   3,
-		},
-	}
-
-	// Clonar el inventario
-	inventarioClonado := inventarioOriginal.Clone()
-
-	// Verificar que el inventario clonado es igual al original
-	if !reflect.DeepEqual(inventarioOriginal.ingredientes, inventarioClonado.ingredientes) {
-		t.Errorf("El inventario clonado no es igual al original.\nOriginal: %v\nClonado: %v", inventarioOriginal.ingredientes, inventarioClonado.ingredientes)
+	if !reflect.DeepEqual(inventario.ingredientes, inventarioClonado.ingredientes) {
+		t.Errorf("El inventario clonado no es igual al original.\nOriginal: %v\nClonado: %v", inventario.ingredientes, inventarioClonado.ingredientes)
 	}
 }
 
 func TestAplicarAsignacionNoNull(t *testing.T) {
-	// Crear productos
-	fechaCaducidad := "15/12/2024"
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
+	_, _, _, _, inventario, recetas := setupTestEnvironment()
 
-	azucar := Producto{
-		nombre:         "Azúcar",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
-
-	levadura := Producto{
-		nombre:         "Levadura",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	huevos := Producto{
-		nombre:         "Huevos",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	// Crear inventario inicial
-	inventario := Inventario{
-		ingredientes: map[Producto]uint64{
-			harina:   5,
-			azucar:   3,
-			levadura: 2,
-			huevos:   6,
-		},
-	}
-
-	// Crear lista de recetas
-	recetas := []Receta{
-		{
-			titulo: "Pan Casero",
-			ingredientes: map[Producto]uint64{
-				harina:   2,
-				levadura: 1,
-			},
-		},
-		{
-			titulo: "Bizcocho",
-			ingredientes: map[Producto]uint64{
-				harina: 3,
-				azucar: 2,
-				huevos: 2,
-			},
-		},
-	}
-
-	nuevoInventario := inventario.aplicarAsignacion(recetas)
+	// Probaremos con las dos primeras recetas: Pan Casero y Bizcocho
+	recetasTest := []Receta{recetas[0], recetas[1]}
+	nuevoInventario := inventario.aplicarAsignacion(recetasTest)
 
 	if nuevoInventario == nil {
 		t.Errorf("aplicarAsignacion devolvió un inventario nulo")
@@ -205,71 +59,22 @@ func TestAplicarAsignacionNoNull(t *testing.T) {
 }
 
 func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
-	fechaCaducidad := "15/12/2024"
-	harina := Producto{
-		nombre:         "Harina",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
+	harina, azucar, levadura, huevos, inventarioInicial, recetas := setupTestEnvironment()
 
-	azucar := Producto{
-		nombre:         "Azúcar",
-		tipo:           NoPerecedero,
-		fechaCaducidad: nil,
-	}
-
-	levadura := Producto{
-		nombre:         "Levadura",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	huevos := Producto{
-		nombre:         "Huevos",
-		tipo:           Perecedero,
-		fechaCaducidad: &fechaCaducidad,
-	}
-
-	inventarioInicial := Inventario{
-		ingredientes: map[Producto]uint64{
-			harina:   5,
-			azucar:   3,
-			levadura: 2,
-			huevos:   6,
-		},
-	}
-
-	recetas := []Receta{
-		{
-			titulo: "Pan Casero",
-			ingredientes: map[Producto]uint64{
-				harina:   2,
-				levadura: 1,
-			},
-		},
-		{
-			titulo: "Bizcocho",
-			ingredientes: map[Producto]uint64{
-				harina: 3,
-				azucar: 2,
-				huevos: 2,
-			},
-		},
-	}
+	// Aplicamos "Pan Casero" y "Bizcocho"
+	recetasTest := []Receta{recetas[0], recetas[1]}
+	inventarioFinal := inventarioInicial.Clone().aplicarAsignacion(recetasTest)
 
 	inventarioEsperado := Inventario{
 		ingredientes: map[Producto]uint64{
-			harina:   0, // 5 - (2 + 3) = 0
-			azucar:   1, // 3 - 2 = 1
-			levadura: 1, // 2 - 1 = 1
-			huevos:   4, // 6 - 2 = 4
+			*harina:   0, // 5 - (2+3) = 0
+			*azucar:   2, // 4 - 2 = 2
+			*levadura: 1, // 2 - 1 = 1
+			*huevos:   4, // 6 - 2 = 4
 		},
 	}
 
-	nuevoInventario := inventarioInicial.Clone()
-	nuevoInventario = nuevoInventario.aplicarAsignacion(recetas)
-
-	if !reflect.DeepEqual(nuevoInventario.ingredientes, inventarioEsperado.ingredientes) {
-		t.Errorf("El inventario resultante no coincide con el esperado.\nEsperado: %v\nObtenido: %v", inventarioEsperado.ingredientes, nuevoInventario.ingredientes)
+	if !reflect.DeepEqual(inventarioFinal.ingredientes, inventarioEsperado.ingredientes) {
+		t.Errorf("El inventario resultante no coincide con el esperado.\nEsperado: %v\nObtenido: %v", inventarioEsperado.ingredientes, inventarioFinal.ingredientes)
 	}
 }
