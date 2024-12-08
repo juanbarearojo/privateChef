@@ -40,7 +40,7 @@ Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja e
 **Opciones de Test Runner:**
 
 1. **`go test` (https://pkg.go.dev/cmd/go#hdr-Test_packages):**  
-   Establecer que `go test` es el comando a través del cual el test runner es ejecutado ya que forma parte de Testing que forma parte de la Standard library. Supone la herramienta oficial de Go para ejecutar pruebas unitarias e integración. En el ecosistema de Go es el test runner más utilizado de todos. Al ser parte del propio lenguaje va a contar con soporte para el mismo. 
+   Establecer que `go test` es el comando a través del cual el test runner es ejecutado. Este forma parte de Testing que forma parte de la Standard library. Supone la herramienta oficial de Go para ejecutar test. En el ecosistema de Go es el test runner más utilizado de todos. Al ser parte del propio lenguaje va a contar con soporte para el mismo. 
 
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
    Un framework de pruebas maduro para Go que incluye un **test runner** facilita la escritura de especificaciones expresivas. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. En el propio repositorio se menciona que esta pensado para ser usado en conjunto con Gomega. Decir que favorece el desarollo basado en la metodología BDD. Podemos ver que su última versión es la v2.22.0(https://github.com/onsi/ginkgo/releases/tag/v2.22.0) además de contar con varias versiones estables lanzadas este año.
@@ -55,4 +55,4 @@ Se selecciona `testing` como biblioteca de aserciones debido a que viene instala
 
 **Selección de Test Runner:**
 
-El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. El hecho de que tenga soporte oficial lo hacen la mejor opción para el proyecto. Hay muchos frameworks  para test pero la gran mayoría usan go test por debajo lo que refuerza la elección. 
+El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. El hecho de que tenga soporte oficial lo hacen la mejor opción para el proyecto. Hay muchos frameworks  para test pero la gran mayoría usan go test por debajo. 
