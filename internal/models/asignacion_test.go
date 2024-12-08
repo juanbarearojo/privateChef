@@ -42,6 +42,13 @@ func setupTestEnvironment() (harina, azucar, levadura, huevos *Producto, inventa
 				*huevos: 1,
 			},
 		},
+		{
+			titulo: "Polvo Dulce",
+			ingredientes: map[Producto]uint64{
+				*harina: 2,
+				*azucar: 3,
+			},
+		},
 	}
 	return
 }
