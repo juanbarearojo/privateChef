@@ -59,10 +59,10 @@ func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
 	inventarioFinal := inventarioInicial.Clone().aplicarAsignacion(recetasTest)
 	inventarioEsperado := Inventario{
 		ingredientes: map[Producto]uint64{
-			*harina:   0, // 5 - (2+3) = 0
-			*azucar:   2, // 4 - 2 = 2
-			*levadura: 1, // 2 - 1 = 1
-			*huevos:   4, // 6 - 2 = 4
+			*harina:   0,
+			*azucar:   2,
+			*levadura: 1,
+			*huevos:   4,
 		},
 	}
 
