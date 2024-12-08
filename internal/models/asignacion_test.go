@@ -66,7 +66,7 @@ func TestRealizarAsignacionListaNoVacia(t *testing.T) {
 	}
 }
 
-func testRealizarAsignacionCantidadCorrecta(t *testing.T) {
+func TestRealizarAsignacionCantidadCorrecta(t *testing.T) {
 	harina, azucar, levadura, _, inventario, recetas := setupTestEnvironment()
 	recetasTest := []Receta{recetas[0], recetas[1]}
 	inventario.ingredientes[*harina] = 2
