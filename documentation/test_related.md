@@ -38,7 +38,7 @@ Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja e
    Test runner de Go. Es la herramienta oficial de Go para ejecutar test. Forma parte de la Standard library de Go. `go test` ((https://pkg.go.dev/cmd/go#hdr-Test_packages) es el comando a través del cual el test runner es ejecutado. 
 
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
-   Un framework de pruebas para Go que incluye un **test runner**. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. En el propio repositorio se menciona que esta pensado para ser usado en conjunto con Gomega. Podemos ver que su última versión es la v2.22.0(https://github.com/onsi/ginkgo/releases/tag/v2.22.0) además de contar con varias versiones estables lanzadas este año. No encontré una reseña en snyk advisor para esta herramienta.
+   Un framework de pruebas para Go que incluye un **test runner**. ginkgo es también es el nombre del test runner y también el comando a través del cual el test runner es ejecutado. En el propio repositorio se menciona que esta pensado para ser usado en conjunto con Gomega. Podemos ver que su última versión es la v2.22.0(https://github.com/onsi/ginkgo/releases/tag/v2.22.0) además de contar con varias versiones estables lanzadas este año. No encontré una reseña en snyk advisor para esta herramienta.
 
 ---
 
