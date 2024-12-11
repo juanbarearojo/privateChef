@@ -19,16 +19,16 @@ Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja e
    Biblioteca nativa de Go para escribir y ejecutar pruebas. No hay métodos de aserción especializados sino que son usadas construcciones simples del 
    lenguaje. Esta es la forma más básica de trabajar los errores en Go. Está dentro del Standard library. 
 
-2. **Gomega (https://onsi.github.io/gomega/):**  
+1. **Gomega (https://onsi.github.io/gomega/):**  
    Una biblioteca de aserciones diseñada para trabajar junto con Ginkgo, pero que también puede usarse con 'go test'. En snyk advisor cuenta con 96/100 (https://snyk.io/advisor/golang/github.com/onsi/gomega) lo que indica un buen estado de salud. La versión más actual disponible en su repositorio es la v1.36.0(https://github.com/onsi/gomega/releases/tag/v1.36.0) pero cuenta con varias versiones estables lanzadas este año. Al no ser parte de la Standard library es necesario instalación adicional.
 
-3. **Testify (https://github.com/stretchr/testify):**  
+2. **Testify (https://github.com/stretchr/testify):**  
    Una biblioteca ampliamente adoptada en la comunidad de Go. Incluye métodos especificos para tipos de aserciones comunes. Es importante resaltar que en snyk advisor cuando se busca testify (https://snyk.io/advisor/search?source=golang&q=testify) aparecen solo reseñas que apuntan a forks del repo original, no hay ninguna que apunta al repositorio de stretch que son los autores de la biblioteca. En este caso se ha escogido esta reseña debido a ser la más reciente (https://snyk.io/advisor/golang/github.com/01ne/testify) con una salud de 78/100. La última version es la v1.10.0(https://github.com/stretchr/testify/releases/tag/v1.10.0) lanzada este año. Es necesario instalación al no ser parte de la Standard library. 
 
-4. **Ghost (https://github.com/rliebz/ghost):**
-   Ghost es una biblioteca de aserciones bastante nueva para trabajar con aserciones. Aunque sea prometodora su versión mas reciente es la v0.2.0(https://github.com/rliebz/ghost/releases/tag/v0.2.0) lo que nos indica que todavía le falta madurez al proyecto. En snyk advisor todavía no hay ninguna reseña a esta herramienta. Es necesario instalación adicional al no ser parte de la Standard library.
+3. **Be (https://pkg.go.dev/github.com/rliebz/ghost/be):**
+   Be es una biblioteca de aserciones bastante nueva. Su creador dice en la documentación que está pensada para ser usada con ghost (https://github.com/rliebz/ghost). Proporciona un conjunto de aserciones básicas para trabajar. Aunque sea prometodora su versión mas reciente es la v0.2.0(https://pkg.go.dev/github.com/rliebz/ghost/be?tab=versions) lo que nos indica que todavía le falta madurez al proyecto. En snyk advisor todavía no hay ninguna reseña a esta herramienta. Es necesario instalación adicional al no ser parte de la Standard library.
 
-5. **GoCheck (https://labix.org/gocheck):**
+4. **GoCheck (https://labix.org/gocheck):**
    GoCheck es una extensión de la biblioteca testing de Go que proporciona funcionalidades avanzadas para pruebas unitarias. En snyk advisor cuenta con una salud de 62/100 (https://snyk.io/advisor/golang/gopkg.in/check.v1) pero se establece que su maintenance es "INACTIVE" cosa que podemos comprobar si nos metemos en el repositorio que lleva más de 4 años sin tener un commit(https://github.com/go-check/check). Es necesario instalación adicional al no ser parte de la Standard library.
 
 
