@@ -11,13 +11,9 @@
 
 ## Selección de Biblioteca de Aserciones
 
-Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja el tema de las aserciones. Es importante destacar que Go maneja errores de manera explícita ya que las funciones devuelven tanto un objeto como un valor de error. Por lo que en Go es posible trabajar usando los errores que esté da como opción base o con  biblitecas externas.
+Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja el tema de los errores. Go no tiene aserciones de forma nativa. Es importante destacar que Go maneja errores de manera explícita ya que las funciones devuelven tanto un objeto como un valor de error. Por lo que en Go es posible trabajar usando los errores que esté da como opción base o con biblitecas externas.
 
 **Opciones de Bibliotecas de Aserciones:**
-
-1. **Testing (https://pkg.go.dev/testing):**  
-   Biblioteca nativa de Go para escribir y ejecutar pruebas. No hay métodos de aserción especializados sino que son usadas construcciones simples del 
-   lenguaje. Esta es la forma más básica de trabajar los errores en Go. Está dentro del Standard library. 
 
 1. **Gomega (https://onsi.github.io/gomega/):**  
    Una biblioteca de aserciones diseñada para trabajar junto con Ginkgo, pero que también puede usarse con 'go test'. En snyk advisor cuenta con 96/100 (https://snyk.io/advisor/golang/github.com/onsi/gomega) lo que indica un buen estado de salud. La versión más actual disponible en su repositorio es la v1.36.0(https://github.com/onsi/gomega/releases/tag/v1.36.0) pero cuenta con varias versiones estables lanzadas este año. Al no ser parte de la Standard library es necesario instalación adicional.
@@ -38,11 +34,11 @@ Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja e
 
 **Opciones de Test Runner:**
 
-1. **`go test` (https://pkg.go.dev/cmd/go#hdr-Test_packages):**  
-   Establecer que `go test` es el comando a través del cual el test runner es ejecutado. Este forma parte de Testing que forma parte de la Standard library. Supone la herramienta oficial de Go para ejecutar test. En el ecosistema de Go es el test runner más utilizado de todos. Al ser parte del propio lenguaje va a contar con soporte para el mismo. 
+1. **Testing (https://pkg.go.dev/testing):**  
+   Test runner de Go. Es la herramienta oficial de Go para ejecutar test. Forma parte de la Standard library de Go. `go test` ((https://pkg.go.dev/cmd/go#hdr-Test_packages) es el comando a través del cual el test runner es ejecutado. 
 
 2. **Ginkgo (https://onsi.github.io/ginkgo/):**  
-   Un framework de pruebas para Go que incluye un **test runner**. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. En el propio repositorio se menciona que esta pensado para ser usado en conjunto con Gomega. Podemos ver que su última versión es la v2.22.0(https://github.com/onsi/ginkgo/releases/tag/v2.22.0) además de contar con varias versiones estables lanzadas este año. No se encontró una reseña en snyk advisor para esta herramienta.
+   Un framework de pruebas para Go que incluye un **test runner**. Ginkgo utiliza su propio ejecutable de línea de comandos, denominado ginkgo, como su test runner principal. En el propio repositorio se menciona que esta pensado para ser usado en conjunto con Gomega. Podemos ver que su última versión es la v2.22.0(https://github.com/onsi/ginkgo/releases/tag/v2.22.0) además de contar con varias versiones estables lanzadas este año. No encontré una reseña en snyk advisor para esta herramienta.
 
 ---
 
@@ -50,8 +46,8 @@ Antes de nada creo que es necesario explicar un concepto sobre como Go trabaja e
 
 **Selección de Biblioteca de Aserciones:**
 
-Se selecciona `testing` como biblioteca de aserciones debido a que viene instalada por defecto con Go, lo que elimina la necesidad de instalaciones adicionales y simplifica la configuración. Todo esto con el objetivo de respetar el primer criterio establecedio. También cumple los otros dos criterios al ser parte de la standard library que supone la base del propio lenguaje por lo que aseguramos salud y versión estable.
+En este caso se decide que no se va trabajar con ninguna biblioteca de aserciones. Se va a trabajar con el manejo de errores que Go da forma nativa. Todo esto con el objetivo de respetar el primer criterio establecedio. Al ser elementos del propio lenguaje se asegura también salud y una versión estable.
 
 **Selección de Test Runner:**
 
-El test runner seleccionado es `go test`, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Al formar parte de testing que es parte de la Standard library cumple los otros dos teniendo salud y una versión estable.
+El test runner seleccionado es testing, ya que es la herramienta estándar incluida por defecto con Go, lo que prioriza un criterio clave: evitar herramientas que requieran instalación adicional. Al formar parte de la Standard library cumple los otros dos criterios teniendo salud y una versión estable.
