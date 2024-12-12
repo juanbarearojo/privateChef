@@ -135,7 +135,6 @@ func ejecutarComparativaAsignacion(t *testing.T, indicesRecetas []int) {
 	inventarioHumano := inventarioInicial.Clone()
 	inventarioHumano = inventarioHumano.aplicarAsignacion(asignacionHumana)
 	desperdicioHumano := inventarioHumano.GetDesperdicio()
-
 	asignacionOptima := realizarAsignacion(recetas, inventarioInicial)
 	inventarioOptimo := inventarioInicial.Clone()
 	inventarioOptimo = inventarioOptimo.aplicarAsignacion(asignacionOptima)
