@@ -4,106 +4,119 @@ import (
 	"testing"
 )
 
-func setupTestEnvironment() (harina, azucar, levadura, huevos *Producto, inventario Inventario, recetas []Receta) {
-	harina, _ = NewProducto("Harina", NoPerecedero, nil)
-	azucar, _ = NewProducto("Azúcar", NoPerecedero, nil)
-	fechaCaducidad := "15/12/2024"
-	levadura, _ = NewProducto("Levadura", Perecedero, &fechaCaducidad)
-	huevos, _ = NewProducto("Huevos", Perecedero, &fechaCaducidad)
-	inventario = Inventario{
+type TestEnv struct {
+	Harina     *Producto
+	Azucar     *Producto
+	Levadura   *Producto
+	Huevos     *Producto
+	Inventario Inventario
+	Recetas    []Receta
+}
+
+func setupTestEnvironment() *TestEnv {
+	env := &TestEnv{}
+
+	env.Harina = &Producto{nombre: "Harina", tipo: NoPerecedero}
+	env.Azucar = &Producto{nombre: "Azúcar", tipo: NoPerecedero}
+	env.Levadura = &Producto{nombre: "Levadura", tipo: Perecedero}
+	env.Huevos = &Producto{nombre: "Huevos", tipo: Perecedero}
+
+	env.Inventario = Inventario{
 		ingredientes: map[Producto]uint64{
-			*harina:   5,
-			*azucar:   4,
-			*levadura: 2,
-			*huevos:   6,
+			*env.Harina:   5,
+			*env.Azucar:   4,
+			*env.Levadura: 2,
+			*env.Huevos:   6,
 		},
 	}
-	recetas = []Receta{
+
+	env.Recetas = []Receta{
 		{
 			titulo: "Pan Casero",
 			ingredientes: map[Producto]uint64{
-				*harina:   2,
-				*levadura: 1,
+				*env.Harina:   2,
+				*env.Levadura: 1,
 			},
 		},
 		{
 			titulo: "Bizcocho",
 			ingredientes: map[Producto]uint64{
-				*harina: 3,
-				*azucar: 2,
-				*huevos: 2,
+				*env.Harina: 3,
+				*env.Azucar: 2,
+				*env.Huevos: 2,
 			},
 		},
 		{
 			titulo: "Galletas",
 			ingredientes: map[Producto]uint64{
-				*harina: 1,
-				*azucar: 1,
-				*huevos: 1,
+				*env.Harina: 1,
+				*env.Azucar: 1,
+				*env.Huevos: 1,
 			},
 		},
 		{
 			titulo: "Polvo Dulce",
 			ingredientes: map[Producto]uint64{
-				*harina: 2,
-				*azucar: 3,
+				*env.Harina: 2,
+				*env.Azucar: 3,
 			},
 		},
 	}
-	return
+
+	return env
 }
 
 func TestSePuedePrepararPanCasero(t *testing.T) {
-	harina, _, levadura, _, inventario, recetas := setupTestEnvironment()
-	receta := recetas[0] // "Pan Casero"
-	inventario.ingredientes[*harina] = 2
-	inventario.ingredientes[*levadura] = 1
+	env := setupTestEnvironment()
+	receta := env.Recetas[0] // "Pan Casero"
+	env.Inventario.ingredientes[*env.Harina] = 2
+	env.Inventario.ingredientes[*env.Levadura] = 1
 
-	puede := sePuedePreparar(receta, &inventario)
+	puede := sePuedePreparar(receta, &env.Inventario)
 	if !puede {
 		t.Errorf("Se esperaba que 'Pan Casero' se pudiera preparar, pero no")
 	}
 }
 
 func TestNoSePuedePrepararPanCasero(t *testing.T) {
-	harina, _, levadura, _, inventario, recetas := setupTestEnvironment()
-	receta := recetas[0] // "Pan Casero"
-	inventario.ingredientes[*harina] = 2
-	inventario.ingredientes[*levadura] = 0
+	env := setupTestEnvironment()
+	receta := env.Recetas[0] // "Pan Casero"
+	env.Inventario.ingredientes[*env.Harina] = 2
+	env.Inventario.ingredientes[*env.Levadura] = 0
 
-	puede := sePuedePreparar(receta, &inventario)
+	puede := sePuedePreparar(receta, &env.Inventario)
 	if puede {
 		t.Errorf("Se esperaba que 'Pan Casero' no se pudiera preparar, pero sí")
 	}
 }
 
 func TestRealizarAsignacionListaNoVacia(t *testing.T) {
-	_, _, _, _, inventario, recetas := setupTestEnvironment()
-	recetasAsignables := realizarAsignacion(recetas, inventario)
+	env := setupTestEnvironment()
+	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario)
 	if len(recetasAsignables) == 0 {
 		t.Errorf("realizarAsignacion devolvió una lista vacía de recetas")
 	}
 }
 
 func TestRealizarAsignacionInventarioVacio(t *testing.T) {
-	_, _, _, _, inventario, recetas := setupTestEnvironment()
-	inventario.ingredientes = make(map[Producto]uint64)
-	recetasAsignables := realizarAsignacion(recetas, inventario)
+	env := setupTestEnvironment()
+	env.Inventario.ingredientes = make(map[Producto]uint64)
+	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario)
 	if len(recetasAsignables) != 0 {
 		t.Errorf("Se esperaba una lista vacía de recetas asignables cuando el inventario está vacío, pero se obtuvo %d recetas", len(recetasAsignables))
 	}
 }
 
 func TestRealizarAsignacionCantidadCorrecta(t *testing.T) {
-	harina, azucar, levadura, _, inventario, recetas := setupTestEnvironment()
+	env := setupTestEnvironment()
 
 	valorMinimoHacerPanHarina := uint64(2)
 	valorMinimoHacerPanAzucar := uint64(1)
 	valorMinimoHacerPanLevadura := uint64(1)
-	inventario.ingredientes[*harina] = valorMinimoHacerPanHarina
-	inventario.ingredientes[*azucar] = valorMinimoHacerPanAzucar
-	inventario.ingredientes[*levadura] = valorMinimoHacerPanLevadura
-	recetasAsignables := realizarAsignacion(recetas, inventario)
+	env.Inventario.ingredientes[*env.Harina] = valorMinimoHacerPanHarina
+	env.Inventario.ingredientes[*env.Azucar] = valorMinimoHacerPanAzucar
+	env.Inventario.ingredientes[*env.Levadura] = valorMinimoHacerPanLevadura
+	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario)
 
 	numeroRecetasAsignablesEsperadas := 1
 	if len(recetasAsignables) != numeroRecetasAsignablesEsperadas {
@@ -112,11 +125,15 @@ func TestRealizarAsignacionCantidadCorrecta(t *testing.T) {
 }
 
 func TestRealizarAsignacionUnicaPosibilidad(t *testing.T) {
-	harina, azucar, levadura, _, inventario, recetas := setupTestEnvironment()
-	inventario.ingredientes[*harina] = 2
-	inventario.ingredientes[*azucar] = 1
-	inventario.ingredientes[*levadura] = 1
-	recetasAsignables := realizarAsignacion(recetas, inventario)
+	env := setupTestEnvironment()
+	env.Inventario.ingredientes[*env.Harina] = 2
+	env.Inventario.ingredientes[*env.Azucar] = 1
+	env.Inventario.ingredientes[*env.Levadura] = 1
+	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario)
+
+	if len(recetasAsignables) == 0 {
+		t.Fatalf("Se esperaba al menos una receta asignable, pero no se asignó ninguna")
+	}
 
 	recetaAsignada := recetasAsignables[0]
 	if recetaAsignada.titulo != "Pan Casero" {
@@ -125,18 +142,18 @@ func TestRealizarAsignacionUnicaPosibilidad(t *testing.T) {
 }
 
 func ejecutarComparativaAsignacion(t *testing.T, indicesRecetas []int) {
-	_, _, _, _, inventarioInicial, recetas := setupTestEnvironment()
+	env := setupTestEnvironment()
 
 	asignacionHumana := make([]Receta, len(indicesRecetas))
 	for i, idx := range indicesRecetas {
-		asignacionHumana[i] = recetas[idx]
+		asignacionHumana[i] = env.Recetas[idx]
 	}
 
-	inventarioHumano := inventarioInicial.Clone()
+	inventarioHumano := env.Inventario.Clone()
 	inventarioHumano = inventarioHumano.aplicarAsignacion(asignacionHumana)
 	desperdicioHumano := inventarioHumano.GetDesperdicio()
-	asignacionOptima := realizarAsignacion(recetas, inventarioInicial)
-	inventarioOptimo := inventarioInicial.Clone()
+	asignacionOptima := realizarAsignacion(env.Recetas, env.Inventario)
+	inventarioOptimo := env.Inventario.Clone()
 	inventarioOptimo = inventarioOptimo.aplicarAsignacion(asignacionOptima)
 	desperdicioOptimo := inventarioOptimo.GetDesperdicio()
 
@@ -161,14 +178,14 @@ func TestRealizarAsignacionComparativa3(t *testing.T) {
 }
 
 func TestRealizarAsignacionDesperdicioCero(t *testing.T) {
-	harina, azucar, levadura, huevos, inventario, recetas := setupTestEnvironment()
-	inventario.ingredientes[*harina] = 3
-	inventario.ingredientes[*azucar] = 1
-	inventario.ingredientes[*levadura] = 1
-	inventario.ingredientes[*huevos] = 1
-	recetasAsignables := realizarAsignacion(recetas, inventario)
+	env := setupTestEnvironment()
+	env.Inventario.ingredientes[*env.Harina] = 3
+	env.Inventario.ingredientes[*env.Azucar] = 1
+	env.Inventario.ingredientes[*env.Levadura] = 1
+	env.Inventario.ingredientes[*env.Huevos] = 1
+	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario)
 
-	desperdicio := inventario.Clone().aplicarAsignacion(recetasAsignables).GetDesperdicio()
+	desperdicio := env.Inventario.Clone().aplicarAsignacion(recetasAsignables).GetDesperdicio()
 	if desperdicio != 0 {
 		t.Errorf("Se esperaba desperdicio cero, pero se obtuvo %d", desperdicio)
 	}
