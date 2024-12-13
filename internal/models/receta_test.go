@@ -7,12 +7,13 @@ import (
 
 func TestRecetaGetIngredientes(t *testing.T) {
 	env := setupTestEnvironment()
-
+	valorMinimoPanHarina := uint64(2)
+	valorMinimoPanLevadura := uint64(1)
 	ingredientesEsperados := map[Producto]uint64{
-		*env.Harina:   2,
-		*env.Levadura: 1,
+		*env.Harina:   valorMinimoPanHarina,
+		*env.Levadura: valorMinimoPanLevadura,
 	}
-	ingredientesObtenidos := env.Recetas[0].GetIngredientes()
+	ingredientesObtenidos := env.Recetas[RecetaPanCasero].GetIngredientes()
 	if !reflect.DeepEqual(ingredientesObtenidos, ingredientesEsperados) {
 		t.Errorf("Los ingredientes obtenidos no coinciden con los esperados.\nEsperados: %v\nObtenidos: %v", ingredientesEsperados, ingredientesObtenidos)
 	}
@@ -30,19 +31,16 @@ func testSumaPerecederosHelper(t *testing.T, recetaIndex int, sumaEsperada uint6
 }
 
 func TestRecetaSumaPerecederos(t *testing.T) {
-	recetaPan := 0
 	sumaEsperadaPan := uint64(1)
-	testSumaPerecederosHelper(t, recetaPan, sumaEsperadaPan)
+	testSumaPerecederosHelper(t, RecetaPanCasero, sumaEsperadaPan)
 }
 
 func TestRecetaSumaPerecederosConMultiplesPerecederos(t *testing.T) {
-	recetaBizcocho := 1
 	sumaEsperadaBizcocho := uint64(2)
-	testSumaPerecederosHelper(t, recetaBizcocho, sumaEsperadaBizcocho)
+	testSumaPerecederosHelper(t, RecetaBizcocho, sumaEsperadaBizcocho)
 }
 
 func TestRecetaSumaPerecederosSinPerecederos(t *testing.T) {
-	recetaPolvoDulce := 3
 	sumaEsperadaPolvo := uint64(0)
-	testSumaPerecederosHelper(t, recetaPolvoDulce, sumaEsperadaPolvo)
+	testSumaPerecederosHelper(t, RecetaPolvoDulce, sumaEsperadaPolvo)
 }
