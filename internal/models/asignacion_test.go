@@ -66,28 +66,41 @@ func setupTestEnvironment() *TestEnv {
 	return env
 }
 
-func TestSePuedePrepararPanCasero(t *testing.T) {
+func verificarPreparacionReceta(t *testing.T, recetaIndex int, ingredientes map[*Producto]uint64, esperado bool) {
 	env := setupTestEnvironment()
-	receta := env.Recetas[0] // "Pan Casero"
-	env.Inventario.ingredientes[*env.Harina] = 2
-	env.Inventario.ingredientes[*env.Levadura] = 1
+	receta := env.Recetas[recetaIndex]
+
+	for ingrediente, cantidad := range ingredientes {
+		env.Inventario.ingredientes[*ingrediente] = cantidad
+	}
 
 	puede := sePuedePreparar(receta, &env.Inventario)
-	if !puede {
-		t.Errorf("Se esperaba que 'Pan Casero' se pudiera preparar, pero no")
+
+	if puede != esperado {
+		if esperado {
+			t.Errorf("Se esperaba que '%s' se pudiera preparar, pero no se pudo.", receta.titulo)
+		} else {
+			t.Errorf("Se esperaba que '%s' no se pudiera preparar, pero sí se pudo.", receta.titulo)
+		}
 	}
+}
+
+func TestSePuedePrepararPanCasero(t *testing.T) {
+	env := setupTestEnvironment()
+	ingredientes := map[*Producto]uint64{
+		env.Harina:   2,
+		env.Levadura: 1,
+	}
+	verificarPreparacionReceta(t, 0, ingredientes, true)
 }
 
 func TestNoSePuedePrepararPanCasero(t *testing.T) {
 	env := setupTestEnvironment()
-	receta := env.Recetas[0] // "Pan Casero"
-	env.Inventario.ingredientes[*env.Harina] = 2
-	env.Inventario.ingredientes[*env.Levadura] = 0
-
-	puede := sePuedePreparar(receta, &env.Inventario)
-	if puede {
-		t.Errorf("Se esperaba que 'Pan Casero' no se pudiera preparar, pero sí")
+	ingredientes := map[*Producto]uint64{
+		env.Harina:   2,
+		env.Levadura: 0,
 	}
+	verificarPreparacionReceta(t, 0, ingredientes, false)
 }
 
 func TestRealizarAsignacionListaNoVacia(t *testing.T) {
