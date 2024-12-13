@@ -56,7 +56,7 @@ func TestInventarioCloneIgualAlOriginal(t *testing.T) {
 func TestAplicarAsignacionNoNull(t *testing.T) {
 	env := setupTestEnvironment()
 
-	recetasTest := []Receta{env.Recetas[0], env.Recetas[1]}
+	recetasTest := []Receta{env.Recetas[RecetaPanCasero], env.Recetas[RecetaBizcocho]}
 	nuevoInventario := env.Inventario.aplicarAsignacion(recetasTest)
 	if nuevoInventario == nil {
 		t.Errorf("aplicarAsignacion devolvió un inventario nulo")
@@ -65,15 +65,18 @@ func TestAplicarAsignacionNoNull(t *testing.T) {
 
 func TestAplicarAsignacionInventarioCorrecto(t *testing.T) {
 	env := setupTestEnvironment()
-
-	recetasTest := []Receta{env.Recetas[0], env.Recetas[1]}
+	valorEsperadoHarina := uint64(0)
+	valorEsperadoAzucar := uint64(2)
+	valorEsperadoLevadura := uint64(1)
+	valorEsperadoHuevos := uint64(4)
+	recetasTest := []Receta{env.Recetas[RecetaPanCasero], env.Recetas[RecetaBizcocho]}
 	inventarioFinal := env.Inventario.Clone().aplicarAsignacion(recetasTest)
 	inventarioEsperado := Inventario{
 		ingredientes: map[Producto]uint64{
-			*env.Harina:   0,
-			*env.Azucar:   2,
-			*env.Levadura: 1,
-			*env.Huevos:   4,
+			*env.Harina:   valorEsperadoHarina,
+			*env.Azucar:   valorEsperadoAzucar,
+			*env.Levadura: valorEsperadoLevadura,
+			*env.Huevos:   valorEsperadoHuevos,
 		},
 	}
 

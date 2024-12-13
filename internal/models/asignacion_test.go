@@ -104,18 +104,22 @@ func verificarPreparacionReceta(t *testing.T, recetaIndex int, ingredientes map[
 
 func TestSePuedePrepararPanCasero(t *testing.T) {
 	env := setupTestEnvironment()
+	valorMinimoPanHarina := uint64(2)
+	valorMinimoPanLevadura := uint64(1)
 	ingredientes := map[*Producto]uint64{
-		env.Harina:   2,
-		env.Levadura: 1,
+		env.Harina:   valorMinimoPanHarina,
+		env.Levadura: valorMinimoPanLevadura,
 	}
 	verificarPreparacionReceta(t, RecetaPanCasero, ingredientes, true)
 }
 
 func TestNoSePuedePrepararPanCasero(t *testing.T) {
 	env := setupTestEnvironment()
+	valorMinimoPanHarina := uint64(2)
+	valorNoMinimoPanLevadura := uint64(0)
 	ingredientes := map[*Producto]uint64{
-		env.Harina:   2,
-		env.Levadura: 0,
+		env.Harina:   valorMinimoPanHarina,
+		env.Levadura: valorNoMinimoPanLevadura,
 	}
 	verificarPreparacionReceta(t, RecetaPanCasero, ingredientes, false)
 }
