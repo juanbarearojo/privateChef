@@ -14,6 +14,13 @@ type TestEnv struct {
 	Recetas     []Receta
 }
 
+const (
+	RecetaPanCasero = iota
+	RecetaBizcocho
+	RecetaGalletas
+	RecetaPolvoDulce
+)
+
 func setupTestEnvironment() *TestEnv {
 	env := &TestEnv{}
 
@@ -101,7 +108,7 @@ func TestSePuedePrepararPanCasero(t *testing.T) {
 		env.Harina:   2,
 		env.Levadura: 1,
 	}
-	verificarPreparacionReceta(t, 0, ingredientes, true)
+	verificarPreparacionReceta(t, RecetaPanCasero, ingredientes, true)
 }
 
 func TestNoSePuedePrepararPanCasero(t *testing.T) {
@@ -110,7 +117,7 @@ func TestNoSePuedePrepararPanCasero(t *testing.T) {
 		env.Harina:   2,
 		env.Levadura: 0,
 	}
-	verificarPreparacionReceta(t, 0, ingredientes, false)
+	verificarPreparacionReceta(t, RecetaPanCasero, ingredientes, false)
 }
 
 func TestRealizarAsignacionListaNoVacia(t *testing.T) {
@@ -146,7 +153,7 @@ func TestRealizarAsignacionUnicaPosibilidad(t *testing.T) {
 
 	recetasAsignables := realizarAsignacion(env.Recetas, env.Inventario2)
 
-	recetaAsignada := recetasAsignables[0]
+	recetaAsignada := recetasAsignables[RecetaPanCasero]
 	if recetaAsignada.titulo != "Pan Casero" {
 		t.Errorf("Se esperaba que la receta asignada fuera 'Pan Casero', pero fue '%s'", recetaAsignada.titulo)
 	}
@@ -174,17 +181,17 @@ func ejecutarComparativaAsignacion(t *testing.T, indicesRecetas []int) {
 }
 
 func TestRealizarAsignacionComparativa(t *testing.T) {
-	indicesRecetas := []int{0, 2}
+	indicesRecetas := []int{RecetaPanCasero, RecetaGalletas}
 	ejecutarComparativaAsignacion(t, indicesRecetas)
 }
 
 func TestRealizarAsignacionComparativa2(t *testing.T) {
-	indicesRecetas := []int{1, 3}
+	indicesRecetas := []int{RecetaBizcocho, RecetaPolvoDulce}
 	ejecutarComparativaAsignacion(t, indicesRecetas)
 }
 
 func TestRealizarAsignacionComparativa3(t *testing.T) {
-	indicesRecetas := []int{2, 3}
+	indicesRecetas := []int{RecetaGalletas, RecetaPolvoDulce}
 	ejecutarComparativaAsignacion(t, indicesRecetas)
 }
 
