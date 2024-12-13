@@ -14,6 +14,17 @@ func TestGetDesperdicioNoNegativo(t *testing.T) {
 	}
 }
 
+func TestGetDesperdicioWithEmptyInventory(t *testing.T) {
+	env := setupTestEnvironment()
+
+	env.Inventario.ingredientes = make(map[Producto]uint64)
+
+	desperdicio := env.Inventario.GetDesperdicio()
+	if desperdicio != 0 {
+		t.Errorf("GetDesperdicio devolvió %d, se esperaba 0 para inventario vacío", desperdicio)
+	}
+}
+
 func TestGetDesperdicioValorCorrecto(t *testing.T) {
 	env := setupTestEnvironment()
 
