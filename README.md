@@ -45,6 +45,7 @@ Ejecutar task check
 - [Elección gestor tareas](./documentation/gestor_tareas.md)
 - [Licencia](./LICENSE)
 - [Test related](./documentation/test_related.md)
+- [Imagen usada en el docker](./documentation/eleccion_imagen.md)
 - [Configuración del proyecto](./documentation/configuracion_repositorio.png)
 - [Historias de usuario](./documentation/user_stories.md)
 - [Milestones](./documentation/milestones.md)
