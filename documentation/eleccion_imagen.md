@@ -8,9 +8,6 @@ En este caso vamos a tomar de referencia las recomendaciones en las buenas prác
 
 ## Posibles opciones
 
-- **golang:Alpine (https://hub.docker.com/_/golang)**: No es necesario de instalación del lenguaje de go. Es una Docker Official Image. Esta imagen incluye alpine Linux, Go y ca-certificates. Prueba de funcionamiento en [Prueba golang:alpine](./imagenes_prueba/golang_alpine.png). El commit donde se ha probado el dockerFile ha sido [golang:alpine commit](https://github.com/juanbarearojo/privateChef/pull/34/commits/e567fd234c4a6e687ad669c90005435e45f5f9ae)
+- **golang:Alpine (https://hub.docker.com/_/golang)**: No es necesario de instalación del lenguaje de go. Es una Docker Official Image. Esta imagen incluye alpine Linux, Go y ca-certificates. Prueba de funcionamiento en [Prueba golang:alpine](./imagenes_prueba/golang_alpine.png). El commit donde se ha probado el DockerFile ha sido [golang:alpine commit](https://github.com/juanbarearojo/privateChef/pull/34/commits/e567fd234c4a6e687ad669c90005435e45f5f9ae)
 
-
-
-
-
+- **Okteto: (https://hub.docker.com/_/golang)**: No es necesario de instalación del lenguaje de go. Es una Verified Publisher. Esta imagen incluye las herramientas Gin, Delve, Gopls, Controller-gen y Air. Esto se puede comprobar viendo el repositorio donde esta el DockerFile(https://github.com/okteto/devenv/blob/main/golang/Dockerfile) Ninguna de estas herramientas son usadas en el proyecto. Prueba de funcionamiento en [Prueba Okteto golang](./imagenes_prueba/okteto_golang.png). El commit donde se ha probado el DockerFile ha sido [okteto commit](https://github.com/juanbarearojo/privateChef/pull/34/commits/eb4c06d2aac1e147d5bd7f489529188ddc308c82)
