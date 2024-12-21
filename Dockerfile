@@ -1,10 +1,10 @@
-FROM golang:alpine AS builder
+FROM okteto/golang:1.23 AS builder
 
-RUN apk add --no-cache git
+RUN apt-get install git
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
-FROM golang:alpine AS final
+FROM okteto/golang:1.23 AS final
 
 COPY --from=builder /go/bin/task /usr/local/bin/task
 
