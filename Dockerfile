@@ -1,10 +1,11 @@
-FROM okteto/golang:1.23 AS builder
+FROM bitnami/golang:latest AS builder
 
-RUN apt-get install git
+ENV GOPROXY=https://proxy.golang.org,direct
+ENV GOSUMDB=sum.golang.org
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
-FROM okteto/golang:1.23 AS final
+FROM bitnami/golang:latest AS final
 
 COPY --from=builder /go/bin/task /usr/local/bin/task
 
