@@ -1,18 +1,23 @@
-FROM bitnami/golang:latest AS builder
+FROM ubuntu:latest AS builder
 
-ENV GOPROXY=https://proxy.golang.org,direct
-ENV GOSUMDB=sum.golang.org
+RUN apt-get update && \
+    apt-get install -y git golang-go ca-certificates && \
+    update-ca-certificates
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
-FROM bitnami/golang:latest AS final
+FROM ubuntu:latest AS final
 
-COPY --from=builder /go/bin/task /usr/local/bin/task
+RUN apt-get update && \
+    apt-get install -y git golang-go ca-certificates && \
+    update-ca-certificates
 
-RUN adduser -D -h /home/test test
+COPY --from=builder /root/go/bin/task /usr/local/bin/task
+
+RUN useradd -m -d /home/test test
 
 RUN mkdir -p /app/.cache/go-build \
-    && chmod -R 777 /app/.cache/go-build 
+    && chmod -R 777 /app/.cache/go-build
 
 USER test
 
