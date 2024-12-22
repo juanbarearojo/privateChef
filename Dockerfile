@@ -15,8 +15,6 @@ RUN go install github.com/go-task/task/v3/cmd/task@latest
 
 FROM debian:latest AS final
 
-ENV GO_VERSION=1.23.2
-
 COPY --from=builder /usr/local/go /usr/local/go
 
 ENV PATH=$PATH:/usr/local/go/bin
