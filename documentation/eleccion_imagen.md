@@ -4,14 +4,13 @@ Antes de establecer ningún criterio es necesario tener en cuenta que elementos 
 
 ## Criterios de elección
 
-En este caso vamos a tomar de referencia las recomendaciones en las buenas prácticas de docker (https://docs.docker.com/build/building/best-practices/) como criterios para la selección de la imagen para el contenedor. En base a esto se destacan se dice "When building your own image from a Dockerfile, ensure you choose a minimal base image that matches your requirements". Bajo esta idea se favorecerán aquellas imágenes que tengan lo mínimo para funcionar y por ende tengan un tamaño menor. El tamaño será tomado en cuenta una vez sean instalados los elementos necesarios establecidos anteriormente y la imagen sea construida.  
+- En este caso vamos a tomar de referencia las recomendaciones en las buenas prácticas de docker (https://docs.docker.com/build/building/best-practices/) como criterios para la selección de la imagen para el contenedor. En base a esto se destacan se dice "When building your own image from a Dockerfile, ensure you choose a minimal base image that matches your requirements". Bajo esta idea se favorecerán aquellas imágenes que tengan lo mínimo para funcionar y por ende tengan un tamaño menor. El tamaño será tomado en cuenta una vez sean instalados los elementos necesarios establecidos anteriormente y la imagen sea construida.  
 
-En caso de que una herramienta se encuentre en mala salud o abandona será descartada. 
+- En caso de que una herramienta se encuentre en mala salud o abandona será descartada. 
 
+## Criterios de bsqueda
 
-## Criterios de búsqueda
-
-Otro detalle a tener en cuenta establecido en las buenas prácticas de docker es que recomienda instalar imágenes de Docker Official Images (https://hub.docker.com/search?badges=official), de Verified Publisher (https://hub.docker.com/search?badges=verified_publisher), o de Docker-Sponsored Open Source (https://hub.docker.com/search?badges=open_source), por lo cual para buscar imágenes solo serán consideradas aquellas imagenes que al buscar en docker hub estén en algunas de estas categorías.
+- Otro detalle a tener en cuenta establecido en las buenas prácticas de docker es que recomienda instalar imágenes de Docker Official Images (https://hub.docker.com/search?badges=official), de Verified Publisher (https://hub.docker.com/search?badges=verified_publisher), o de Docker-Sponsored Open Source (https://hub.docker.com/search?badges=open_source), por lo cual para buscar imágenes solo serán consideradas aquellas imagenes que al buscar en docker hub estén en algunas de estas categorías.
 
 ## Posibles opciones
 
@@ -29,5 +28,12 @@ Otro detalle a tener en cuenta establecido en las buenas prácticas de docker es
 
 - **Debian (https://hub.docker.com/_/debian)**: Es una imagen del sistema opertativo vacía por lo que es necesario instalar Go. Es una Docker Official Image. Necesidad de instalr wget y tar ya que la versión de golang de la imagen es la 1.22 y por ende daba fallos ya que la versión del go.mod es la 1.23. Prueba de funcionamiento en [Prueba debian:latest](./imagenes_prueba/debian.png). El commit donde se ha probado el DockerFile ha sido [debian commit](https://github.com/juanbarearojo/privateChef/pull/34/commits/c2751aa1a2949fb8275b285d61ae805f37a3a597)
 
+
+- **circleci/golang (https://hub.docker.com/r/circleci/golang)**: Es una Verified Publisher. Lleva sin ser actualizada tres años. En el repositorio de git hub pone que esta archivada (https://github.com/CircleCI-Archived/circleci-dockerfiles). Es descartada por este motivo.
+
+
+## Elección
+
+Como se puede ver en [Tamaños imágenes credas](./imagenes_prueba/imagenes_creadas.png) la imagen que usa golang alpine como base es la que tiene un menor tamaño seguido por la de Debian. Se decide coger como version base golang alpine debido a este motivo.
 
 
