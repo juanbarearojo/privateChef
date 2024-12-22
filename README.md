@@ -38,6 +38,11 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 Ejecutar task check
 
+## Orden Docker
+
+orden build imagen:  docker build -t <imagen> .
+orden run imagen: docker run -u 1001 -t -v `pwd`:/app/test <imagen>
+
 ## Documentación adicional:
 
 - [Elección build tool](./documentation/build_tool.md)
