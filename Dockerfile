@@ -4,7 +4,7 @@ RUN apk add --no-cache git
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
-FROM golang:alpine AS final
+FROM golang:alpine 
 
 LABEL org.opencontainers.image.authors="juanbarearojo0@correo.ugr.es"
 
