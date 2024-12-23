@@ -6,7 +6,7 @@ RUN go install github.com/go-task/task/v3/cmd/task@latest
 
 FROM golang:alpine AS final
 
-LABEL org.opencontainers.image.authors="juanbarearojo0@correo.ugr.es"
+LABEL org.opencontainers.image.authors="juanbarearojo@correo.ugr.es"
 
 COPY --from=builder /go/bin/task /usr/local/bin/task
 
