@@ -32,4 +32,4 @@ Antes de establecer ningún criterio es necesario tener en cuenta qué elementos
 
 ## Elección
 
-Como se puede ver en [Tamaños imágenes creadas](./imagenes_prueba/imagenes_creadas.png) la imagen que usa golang alpine como base es la que tiene un menor tamaño seguido por la de Debian. Se decide escoger como versión base golang alpine debido a este motivo.
+Como se puede ver en [Tamaños imágenes creadas](./imagenes_prueba/imagenes_creadas.png) la imagen que usa golang alpine como base es la que tiene un menor tamaño seguido por la de Debian. Pero es verdad que la versión de golang alpine incluye ca-certificates que no es necesario. Debido al primer criterio se escoge debian para instalar solo lo mínimo.
