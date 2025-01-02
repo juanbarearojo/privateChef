@@ -9,12 +9,8 @@ blocks:
     task:
       jobs:
         - name: run-tests
-          machine:
-            type: e1-standard-2
-            os_image: ubuntu2004
-            containers:
-              - name: main
-                image: juanbarearojo0/privatechef
+          docker:
+            - image: juanbarearojo0/privatechef
           commands:
             - checkout
             - task test
