@@ -1,13 +1,15 @@
 version: 2.1
 
-jobs:
-  test:
-    docker:
-      - image: juanbarearojo0/privatechef:latest
-    steps:
-      - run:
-           task test
 workflows:
   sample:
     jobs:
       - test
+
+jobs:
+  test:
+    docker:
+      - image: juanbarearojo0/privatechef
+    steps:
+      - checkout
+      - run:
+           task test
