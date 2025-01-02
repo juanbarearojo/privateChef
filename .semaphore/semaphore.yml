@@ -7,10 +7,12 @@ agent:
 blocks:
   - name: Test Block
     task:
+      environment:
+        containers:
+          - name: app
+            image: juanbarearojo0/privatechef
       jobs:
         - name: run-tests
-          docker:
-            - image: juanbarearojo0/privatechef
           commands:
             - checkout
             - task test
