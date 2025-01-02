@@ -1,0 +1,16 @@
+version: v1.0
+name: Pipeline tes Docker
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Test
+    task:
+      jobs:
+        - name: Ejecutar pruebas
+          docker:
+            - image: juanbarearojo0/privatechef
+          commands:
+            - checkout
+            - task test
