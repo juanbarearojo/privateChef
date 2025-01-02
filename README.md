@@ -38,6 +38,11 @@ Sin embargo, uno de los mayores retos de hacer meal prep es planificar qué coci
 
 Ejecutar task check
 
+## Orden Docker
+
+orden build imagen:  docker build -t <imagen> .
+orden run imagen: docker run -u 1001 -t -v `pwd`:/app/test <imagen>
+
 ## Documentación adicional:
 
 - [Elección build tool](./documentation/build_tool.md)
@@ -45,6 +50,7 @@ Ejecutar task check
 - [Elección gestor tareas](./documentation/gestor_tareas.md)
 - [Licencia](./LICENSE)
 - [Test related](./documentation/test_related.md)
+- [Imagen usada en el docker](./documentation/eleccion_imagen.md)
 - [Configuración del proyecto](./documentation/configuracion_repositorio.png)
 - [Historias de usuario](./documentation/user_stories.md)
 - [Milestones](./documentation/milestones.md)
