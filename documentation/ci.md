@@ -8,7 +8,7 @@
 
 1. **Travis (https://www.travis-ci.com/)**: Es descartado porque no tiene prueba gratuita actualmente. El plan mas barato que tienen es de 15 euros al mes. 
 
-2.
+2. **Circle ci(https://circleci.com/developer/)**: Tiene un plan gratuito que permite (Up to 6,000 build minutes, Up to 5 active users/month, Docker, Windows, Linux, Arm, macOS, self hosted runners, 30x concurrency). 
 
 3.
 
