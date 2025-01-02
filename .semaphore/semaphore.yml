@@ -1,19 +1,14 @@
-version: v2.0
+version: v1.0
 name: Pipeline test
-
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-
 blocks:
   - name: Test Block
-    environment:
-      containers:
-        - name: app
-          image: juanbarearojo0/privatechef
-    tasks:
-      - name: run-tests
-        commands:
-          - checkout
-          - task test
+    task:
+      jobs:
+        - name: run-tests
+          commands:
+            - checkout
+            - 'docker run --rm -v `pwd`:/app juanbarearojo0/privatechef bash -c "cd /app && task test"'
