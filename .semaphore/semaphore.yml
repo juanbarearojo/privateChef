@@ -1,9 +1,11 @@
-version: v1.0
+version: v2.0
 name: Pipeline test
+
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
+
 blocks:
   - name: Test Block
     environment:
@@ -15,5 +17,3 @@ blocks:
         commands:
           - checkout
           - task test
-    task:
-      jobs: []
