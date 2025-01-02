@@ -11,4 +11,4 @@ blocks:
         - name: run-tests
           commands:
             - checkout
-            - 'docker run --rm -v `pwd`:/app juanbarearojo0/privatechef bash -c "cd /app && task test"'
+            - 'docker run --rm -v `pwd`:/app/test juanbarearojo0/privatechef'
