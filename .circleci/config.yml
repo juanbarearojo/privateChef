@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: uanbarearojo0/privatechef:latest
+      - image: juanbarearojo0/privatechef:latest
     steps:
       - run:
            task test
