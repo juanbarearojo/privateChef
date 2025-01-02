@@ -6,10 +6,14 @@ agent:
     os_image: ubuntu2004
 blocks:
   - name: Test Block
+    environment:
+      containers:
+        - name: app
+          image: juanbarearojo0/privatechef
+    tasks:
+      - name: run-tests
+        commands:
+          - checkout
+          - task test
     task:
-      jobs:
-        - name: run-tests
-          docker_image: juanbarearojo0/privatechef
-          commands:
-            - checkout
-            - task test
+      jobs: []
