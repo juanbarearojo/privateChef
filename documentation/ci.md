@@ -20,3 +20,8 @@
 
 6. **Buddy Works (https://buddy.works/)**: Ofrece un plan gratuito que permite usuarios ilimitado así como concurrencia paralela (https://buddy.works/pricing). No requiere configuración de infraestructura adicional, pero no genera un archivo `.yml`, lo que lo descarta como opción.
 
+7. **AppVeyor (https://www.appveyor.com/)**: Tiene un plan gratuito algo limitado en comparacion al resto ya que inlcuye Unlimited public projects 1 concurrent job 5 self-hosted jobs pero que es mas que suficiente para el proyecto (https://www.appveyor.com/pricing/). Genera un archivo appveyor.yml y no es necesario crear ninguna infraestructura virtual adicioanl.
+
+8. 
+
+
