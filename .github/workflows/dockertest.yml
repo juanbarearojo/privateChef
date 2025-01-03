@@ -10,8 +10,8 @@ jobs:
       image: juanbarearojo0/privatechef
       options: --user root
     steps:
-      - name: Checkout repository
+      - name: Checkout repositorio
         uses: actions/checkout@v4
 
-      - name: Run test task
+      - name: test task
         run: task test

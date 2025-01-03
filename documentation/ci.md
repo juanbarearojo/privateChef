@@ -8,7 +8,7 @@
 
 ## Posibles Opciones
 
-1. **Travis (https://www.travis-ci.com/)**: Descartado porque no ofrece un periodo de prueba gratuita actualmente en su página web. Especificamente cuando uno se va registar poner *Trials are currently unavailable. The issue has been identified, and we are preparing a fix. In the meantime, please reach out to support@travis-ci.com if you have any questions.* El plan más económico cuesta 15 euros al mes. Debido a esto se descarta como opción.
+1. **Travis (https://www.travis-ci.com/)**: Descartado porque no ofrece un periodo de prueba gratuita actualmente en su página web. Específicamente cuando uno se va a registrar pone *Trials are currently unavailable. The issue has been identified, and we are preparing a fix. In the meantime, please reach out to support@travis-ci.com if you have any questions.* El plan más económico cuesta 15 euros al mes. Debido a esto se descarta como opción.
 
 2. **CircleCI (https://circleci.com/developer/)**: Ofrece un plan gratuito que incluye hasta 6,000 minutos de construcción, un máximo de 5 usuarios activos por mes, y soporte para Docker, Windows, Linux, ARM, macOS, y runners autohospedados con concurrencia hasta 30x (https://circleci.com/pricing/). Genera un archivo `.yml`.
 
@@ -16,12 +16,18 @@
 
 4. **Harness (https://www.harness.io/)**: Cuenta con un plan gratuito muy completo (https://www.harness.io/pricing). Sin embargo, al intentar configurarlo, se verificó que requiere definir infraestructura adicional, como Kubernetes, una máquina virtual, o un agente hospedado. Por este motivo, se descarta como opción. Genera un archivo `.yml`.
 
-5. **Jenkins (https://www.jenkins.io/)**: Es software de código abierto. Durante las pruebas de instalación, presentó problemas de compatibilidad con el JDK, ya que solo admite las versiones 17 y 21. Aunque se intentó con ambas versiones, persistieron errores relacionados con la conexión a GitHub.
+5. **Jenkins (https://www.jenkins.io/)**: Es software de código abierto. Durante las pruebas de instalación, presentó problemas de compatibilidad con el JDK, ya que solo admite las versiones 17 y 21. Aunque se intentó con ambas versiones, hubo errores relacionados con la conexión a GitHub.
 
-6. **Buddy Works (https://buddy.works/)**: Ofrece un plan gratuito que permite usuarios ilimitado así como concurrencia paralela (https://buddy.works/pricing). No requiere configuración de infraestructura adicional, pero no genera un archivo `.yml`, lo que lo descarta como opción.
+6. **Buddy Works (https://buddy.works/)**: Ofrece un plan gratuito que permite usuarios ilimitados así como concurrencia paralela (https://buddy.works/pricing). No requiere configuración de infraestructura adicional, pero no genera un archivo `.yml`, lo que lo descarta como opción.
 
-7. **AppVeyor (https://www.appveyor.com/)**: Tiene un plan gratuito algo limitado en comparacion al resto ya que inlcuye Unlimited public projects 1 concurrent job 5 self-hosted jobs pero que es mas que suficiente para el proyecto (https://www.appveyor.com/pricing/). Genera un archivo appveyor.yml y no es necesario crear ninguna infraestructura virtual adicioanl.
+7. **AppVeyor (https://www.appveyor.com/)**: Tiene un plan gratuito algo limitado en comparación al resto ya que incluye Unlimited public projects, 1 concurrent job, 5 self-hosted jobs, pero que es más que suficiente para el proyecto (https://www.appveyor.com/pricing/). Genera un archivo `appveyor.yml` y no es necesario crear ninguna infraestructura virtual adicional.
 
-8. 
+8. **GitHub Actions (https://github.com/features/actions)**: Es gratuita, genera archivo pero es necesario modificar la infraestructura virtual determinada en los objetivos anteriores. No se puede escribir en la carpeta `/__w/_temp/_runner_file_commands/` a menos que se tengan privilegios necesarios. Por eso es necesario ejecutar como root la imagen .
+
+## Elección
+
+- Se elige **CircleCI** para que ejecute los tests a través de la imagen Docker.
+- Se elige **AppVeyor** para probar las distintas versiones de Go. Como se establece en este documento (https://go.dev/doc/devel/release#policy), las versiones mantenidas son las dos últimas versiones que son 1.23 y 1.22. Debido a esto, son probadas. También se prueba la versión 1.21 para comprobar si funcionaría una versión que ya no está mantenida.
+- Se mantienen el resto de los tests como muestra del trabajo realizado.
 
 
