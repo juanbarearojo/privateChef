@@ -22,12 +22,12 @@
 
 7. **AppVeyor (https://www.appveyor.com/)**: Tiene un plan gratuito algo limitado en comparación al resto ya que incluye Unlimited public projects, 1 concurrent job, 5 self-hosted jobs, pero que es más que suficiente para el proyecto (https://www.appveyor.com/pricing/). Genera un archivo `appveyor.yml` y no es necesario crear ninguna infraestructura virtual adicional.
 
-8. **GitHub Actions (https://github.com/features/actions)**: Es gratuita, genera archivo pero es necesario modificar la infraestructura virtual determinada en los objetivos anteriores. No se puede escribir en la carpeta `/__w/_temp/_runner_file_commands/` a menos que se tengan privilegios necesarios. Por eso es necesario ejecutar como root la imagen .
+8. **GitHub Actions (https://github.com/features/actions)**: Es gratuita, genera un archivo.yml, no es necesario infraestructra adicional.
 
 ## Elección
 
 - Se elige **CircleCI** para que ejecute los tests a través de la imagen Docker.
 - Se elige **AppVeyor** para probar las distintas versiones de Go. Como se establece en este documento (https://go.dev/doc/devel/release#policy), las versiones mantenidas son las dos últimas versiones que son 1.23 y 1.22. Debido a esto, son probadas. También se prueba la versión 1.21 para comprobar si funcionaría una versión que ya no está mantenida.
-- Se mantienen el resto de los tests como muestra del trabajo realizado.
+- Se mantienen el resto de las pipeline del resto de Ci como muestra del trabajo realizado.
 
 
