@@ -13,7 +13,8 @@ ENV GOPATH=/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 RUN wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz 
+    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
+    rm go${GO_VERSION}.linux-amd64.tar.gz
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
@@ -29,9 +30,7 @@ COPY --from=builder /go/bin/task /usr/local/bin/task
 
 RUN useradd -m test && \
     mkdir -p /app/.cache/go-build && \
-    chmod -R 777 /app/.cache/go-build \
-    mkdir -p /__w/_temp/_runner_file_commands/ && \
-    chmod -R 777 /__w/_temp/_runner_file_commands/
+    chmod -R 777 /app/.cache/go-build
 
 USER test
 
