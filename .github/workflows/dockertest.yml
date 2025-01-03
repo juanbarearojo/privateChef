@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: juanbarearojo0/privatechef
+      options: --user root
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
