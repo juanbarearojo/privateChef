@@ -1,0 +1,16 @@
+name: test 
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: juanbarearojo0/privatechef
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run test task
+        run: task test
