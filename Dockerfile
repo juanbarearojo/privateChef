@@ -13,9 +13,8 @@ ENV GOPATH=/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 RUN wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
-    rm go${GO_VERSION}.linux-amd64.tar.gz
-
+    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz 
+    
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
 FROM debian:bookworm-slim
