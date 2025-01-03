@@ -6,4 +6,5 @@ automatizar:
   fichero: Taskfile.yml
   orden: task
 
-test: internal/models/asignacion_test.go
+test: internal/models/asignacion_test.
+CI: appveyor.yml
