@@ -29,7 +29,9 @@ COPY --from=builder /go/bin/task /usr/local/bin/task
 
 RUN useradd -m test && \
     mkdir -p /app/.cache/go-build && \
-    chmod -R 777 /app/.cache/go-build
+    chmod -R 777 /app/.cache/go-build \
+    mkdir -p /__w/_temp/_runner_file_commands/ && \
+    chmod -R 777 /__w/_temp/_runner_file_commands/
 
 USER test
 
