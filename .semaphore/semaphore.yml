@@ -1,0 +1,14 @@
+version: v1.0
+name: Pipeline test
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Test Block
+    task:
+      jobs:
+        - name: run-tests
+          commands:
+            - checkout
+            - 'docker run --rm -v `pwd`:/app/test juanbarearojo0/privatechef'

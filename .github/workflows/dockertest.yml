@@ -1,0 +1,20 @@
+name: test 
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Go
+        uses: actions/setup-go@v5
+
+      - name: Instalar Task
+        uses: arduino/setup-task@v2
+
+      - name: Ejecutar tarea de prueba
+        run: task test
