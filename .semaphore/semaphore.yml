@@ -3,12 +3,21 @@ name: Pipeline test
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu2004
+    os_image: ubuntu2204
 blocks:
-  - name: Test Block
+  - name: Test task
     task:
       jobs:
-        - name: run-tests
+        - name: Test con Task
           commands:
-            - checkout
-            - 'docker run --rm -v `pwd`:/app/test juanbarearojo0/privatechef'
+            - sudo apt-get update
+            - sudo apt-get install -y golang
+
+            - mkdir -p /tmp/bin
+            - curl -s https://taskfile.dev/install.sh | sh -s -- -b /tmp/bin
+            - export PATH="/tmp/bin:$PATH"
+
+            - git clone https://github.com/juanbarearojo/privateChef.git
+            - cd privateChef
+            - task test
+
