@@ -15,9 +15,10 @@ environment:
 before_test:
   - set PATH=C:\go%GO_VERSION%\bin;%PATH%
   - set GOROOT=C:\go%GO_VERSION%
-  - go version
+  - set GOTOOLCHAIN=local
 
 
 test_script:
+  - go version
   - go env
   - go test -v ./...
