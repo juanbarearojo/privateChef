@@ -7,14 +7,14 @@ RUN apt-get update && \
         git && \
     update-ca-certificates
 
-ENV GO_VERSION=1.23.2
+ENV GO_VERSION=1.23.4
 ENV GOROOT=/usr/local/go
 ENV GOPATH=/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 RUN wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz 
-
+    
 RUN go install github.com/go-task/task/v3/cmd/task@latest
 
 FROM debian:bookworm-slim

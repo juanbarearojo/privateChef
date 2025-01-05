@@ -1,0 +1,15 @@
+version: 2.1
+
+workflows:
+  sample:
+    jobs:
+      - test
+
+jobs:
+  test:
+    docker:
+      - image: juanbarearojo0/privatechef
+    steps:
+      - checkout
+      - run:
+           task test
