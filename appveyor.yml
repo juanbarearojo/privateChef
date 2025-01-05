@@ -7,7 +7,6 @@ skip_commits:
 environment: 
   matrix:
     - GO_VERSION: "122"
-    - GO_VERSION: "123"
     - GO_VERSION: "121"
 
   GOPATH: c:\gopath
