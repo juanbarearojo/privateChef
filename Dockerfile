@@ -7,7 +7,7 @@ RUN apt-get update && \
         git && \
     update-ca-certificates
 
-ENV GO_VERSION=1.23.2
+ENV GO_VERSION=1.23.4
 ENV GOROOT=/usr/local/go
 ENV GOPATH=/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
